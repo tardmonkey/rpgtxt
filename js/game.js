@@ -22,10 +22,18 @@ function showTextNode(textNodeIndex) {
 
     //affiche les options du texte
     textNode.options.forEach(element => {
+        if(!element.require){       //si option n'a pas de require alors
         const button = document.createElement('button')
         button.innerHTML = element.text
         button.addEventListener('click', () => selectOption(element))
         textContent.appendChild(button)
+        }
+        else{
+            //Ici il faut check quel est le prérequis (clé require) pour afficher l'option
+            //Puis l'afficher ou non
+            return false;
+        }
+        //Si l'option a une clé statUp, alors invoke la function statUp avec la clé comme paramètre
         if(element.statUp) {
             button.addEventListener("click", () => statUp(element.statUp))
             console.log(element.statUp)

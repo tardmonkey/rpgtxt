@@ -26,13 +26,24 @@ function showTextNode(textNodeIndex) {
         button.innerHTML = element.text
         button.addEventListener('click', () => selectOption(element))
         textContent.appendChild(button)
+        if(element.statUp) {
+            button.addEventListener("click", () => statUp(element.statUp))
+            console.log(element.statUp)
+        }
+        console.log(char.str)
     });
 }
 
 function selectOption(option) {
     const nextTextNodeId = option.nextText
     showTextNode(nextTextNodeId)
+    console.log(char)
   }
 
+  function statUp(stat){
+      if stat = str = str++
+      let statIncrement = char.stat
+      statIncrement++
+  }
 
 startGame()

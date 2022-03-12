@@ -1,3 +1,5 @@
+import {char} from "./char.mjs"
+
 export const textNodes = [
     {
         id:1,
@@ -5,7 +7,6 @@ export const textNodes = [
         options:[
             {
                 text:'Commencer',
-                setState : {alive:true},
                 nextText: 2
               },
            
@@ -17,12 +18,12 @@ export const textNodes = [
         options:[
             {
                 text:"Observer la pièce",
-                setState : {alive:true},
+                
                 nextText: 3.1
               },
             {
                 text:"Observer l'homme",
-                setState : {alive:true},
+                
                 nextText: 3
               },
             
@@ -34,12 +35,12 @@ export const textNodes = [
         options:[
             {
                 text:"Chercher des détails",
-                setState : {alive:true},
+                
                 nextText: 4
               },
             {
                 text:"Observer la pièce",
-                setState : {alive:true},
+                
                 nextText: 4
               },
             
@@ -51,12 +52,12 @@ export const textNodes = [
         options:[
             {
                 text:"Chercher des détails",
-                setState : {alive:true},
+                
                 nextText: 4
               },
             {
                 text:"Observer l'homme",
-                setState : {alive:true},
+                
                 nextText: 4
               },
             
@@ -68,17 +69,18 @@ export const textNodes = [
         options:[
             {
                 text:"Je ne sais pas",
-                setState : {alive:true},
+                statUp: "int",
                 nextText: 5.1
               },
             {
                 text:"Qu'est-ce que je fais ici ?",
-                setState : {alive:true},
+                statUp: "agi",
+                
                 nextText: 5.2
               },
             {
                 text:"Qui le demande ?",
-                setState : {alive:true},
+                statUp: "str",
                 nextText: 5.2
               },
             
@@ -90,17 +92,17 @@ export const textNodes = [
         options:[
             {
                 text:"Je ne sais pas",
-                setState : {alive:true},
+                
                 nextText: 5.1
               },
             {
                 text:"J'en sais rien !",
-                setState : {alive:true},
+                
                 nextText: 5.2
               },
             {
                 text:"Va te faire foutre",
-                setState : {alive:true},
+                
                 nextText: 5.3
               },
             
@@ -112,17 +114,17 @@ export const textNodes = [
         options:[
             {
                 text:"Je ne sais pas",
-                setState : {alive:true},
+                
                 nextText: 5.1
               },
             {
                 text:"J'en sais rien !",
-                setState : {alive:true},
+                
                 nextText: 5.2
               },
             {
                 text:"Va te faire foutre",
-                setState : {alive:true},
+                
                 nextText: 5.3
               },
             
@@ -134,17 +136,17 @@ export const textNodes = [
         options:[
             {
                 text:"Je ne sais pas",
-                setState : {alive:true},
+                
                 nextText: 5.1
               },
             {
                 text:"J'en sais rien !",
-                setState : {alive:true},
+                
                 nextText: 5.2
               },
             {
                 text:"Va te faire foutre",
-                setState : {alive:true},
+                
                 nextText: 5.3
               },
             

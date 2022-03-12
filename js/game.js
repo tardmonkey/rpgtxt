@@ -12,38 +12,27 @@ function startGame(){
     showTextNode(1)
 }
 
-/**
- * Affiche le texte
- * @constructor
- * @param {number} textNodeIndex - Le chiffre de l'index du texte dans le tableau textNodes
- */
-function showTextNode(textNodeIndex){
-    
-    //Affiche le texte h1
+
+function showTextNode(textNodeIndex) {
+
+    //trouve le texte via id et l'affiche
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-    textContent.innerText = textNode.text
-    
-    //Affiche le texte des boutons
-    textNode.options.forEach(option => {
-            console.log(option)
-            let button = document.createElement("button")
-            button.innerText = option.text
-            button.addEventListener("click", function(){selectOption(option.nextText)})
-            textContent.appendChild(button)
-    })
+    console.log(textNode)
+    textContent.innerHTML = textNode.text
+
+    //affiche les options du texte
+    textNode.options.forEach(element => {
+        const button = document.createElement('button')
+        button.innerHTML = element.text
+        button.addEventListener('click', () => selectOption(element))
+        textContent.appendChild(button)
+    });
 }
 
-
-
-function selectOption(option){
-   const nextTextId = option.nextText
-   state = Object.assign(state, option.setState)
-   showTextNode(nextTextId)
-}
-
-function showOptions(option){
-    return option.requireState == null || option.requiredState(state)
-}
+function selectOption(option) {
+    const nextTextNodeId = option.nextText
+    showTextNode(nextTextNodeId)
+  }
 
 
 startGame()

@@ -15,3 +15,6 @@ Les choix sont affichés avec forEach, donc il n'y a pas de limites de choix
 
 * Function qui check les caracs du personnage avant de d'afficher l'option 
 * Passer tout les choix ainsi que les changements sur le personnage dans le localStorage pour sauvegarde 
+* TOUT le CSS
+* Ajouter images ?
+* Ajouter musiques ainsi que sons pour certains events ?

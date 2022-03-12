@@ -30,7 +30,6 @@ function showTextNode(textNodeIndex) {
             button.addEventListener("click", () => statUp(element.statUp))
             console.log(element.statUp)
         }
-        console.log(char.str)
     });
 }
 
@@ -40,10 +39,13 @@ function selectOption(option) {
     console.log(char)
   }
 
+//Check quelle est la stat concerné et l'incrémente de 1
   function statUp(stat){
-      if stat = str = str++
-      let statIncrement = char.stat
-      statIncrement++
+      switch (stat){
+          case "str":char.str++; console.log(char); break;
+          case "int":char.int++; console.log(char); break;
+          case "agi":char.agi++; console.log(char); break;
+      }
   }
 
 startGame()

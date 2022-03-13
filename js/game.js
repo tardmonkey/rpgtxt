@@ -3,12 +3,10 @@ import {char} from "./modules/char.mjs"
 
 let textContent = document.querySelector(".main")
 let textButton = document.querySelector("button")
-let state = {}
 
 
 
 function startGame(){
-    state = {}
     showTextNode(1)
 }
 

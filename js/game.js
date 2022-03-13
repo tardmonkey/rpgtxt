@@ -10,16 +10,17 @@ let state = {}
 
 function startGame(){
     let joueur = new Personnage("Lenoir","Robin");
+    console.log(JSON.stringify(joueur));
     console.log(joueur.getForce());
     joueur.gainForce();
     console.log(joueur.getForce());
-    joueur.ajoutObjet("Pain et fromages","De quoi se nourrir pour un repas",1,1)
+    joueur.ajoutObjet("Pain et fromages","De quoi se nourrir pour un repas",1,1);
     console.log(joueur.presenceObjet("Pain et fromages"));
     joueur.utiliserObjet("Pain et fromages");
     console.log(joueur.presenceObjet("Pain et fromages"));
     joueur.utiliserObjet("Pain et fromages");
     console.log(joueur.presenceObjet("Pain et fromages"));
-    joueur.ajoutObjet("Pain et fromages","De quoi se nourrir pour un repas",1,1)
+    joueur.ajoutObjet("Pain et fromages","De quoi se nourrir pour un repas",1,1);
     console.log(joueur.presenceObjet("Pain et fromages"));
     state = {}
     showTextNode(1)

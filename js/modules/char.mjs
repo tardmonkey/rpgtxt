@@ -1,4 +1,4 @@
-export let char = {
+export const char = {
     name:"",
     pv:0,
     str:0,

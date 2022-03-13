@@ -14,7 +14,6 @@ function startGame(){
 
 /**
  * Affiche le texte
- * @constructor
  * @param {number} textNodeIndex - Le chiffre de l'index du texte dans le tableau textNodes
  */
 function showTextNode(textNodeIndex){

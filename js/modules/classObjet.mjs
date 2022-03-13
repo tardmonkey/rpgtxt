@@ -55,6 +55,7 @@ export default class Objet{
   this.nombreUtilisation = this.nombreUtilisation + 1;
   if (this.nombreUtilisation == this.nombreUtilisationMax) {
       this.quantité = this.quantité - 1
+      this.nombreUtilisation = 0;
   }
   }
 }

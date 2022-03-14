@@ -8,6 +8,21 @@ let textButton = document.querySelector("button")
 
 function startGame(){
     showTextNode(1)
+    // création localStorage au startGame
+    createStorageCharInventoryChoices()
+}
+
+// Création de 3 localStorages "Char" qui contient stats, "Inventory" qui contient l'inventaire et "Choices" qui contient les choix
+function createStorageCharInventoryChoices() {
+    localStorage.setItem("Char", JSON.stringify({
+        name:"",
+        pv:0,
+        str:0,
+        agi:0,
+        int:0
+    })),
+    localStorage.setItem("Inventory", JSON.stringify(["Chemise"])),
+    localStorage.setItem("Choices", JSON.stringify([]))
 }
 
 
@@ -36,6 +51,10 @@ function showTextNode(textNodeIndex) {
             button.addEventListener("click", () => statUp(element.statUp))
             console.log(element.statUp)
         }
+        if(element.newItem) {
+            button.addEventListener("click", () => newItem(element.newItem))
+            console.log(element.newItem)
+        }
     });
 }
 
@@ -45,13 +64,21 @@ function selectOption(option) {
     console.log(char)
   }
 
-//Check quelle est la stat concerné et l'incrémente de 1
+//Check quelle est la stat concernée et l'incrémente de 1 dans le localStorage
   function statUp(stat){
       switch (stat){
-          case "str":char.str++; console.log(char); break;
-          case "int":char.int++; console.log(char); break;
-          case "agi":char.agi++; console.log(char); break;
+          case "str":localStorage.Char.str++; console.log(char); break;
+          case "int":localStorage.Char.int++; console.log(char); break;
+          case "agi":localStorage.Char.agi++; console.log(char); break;
       }
   }
+
+//Ajout de l'item dans le localStorage
+function newItem(item){
+        let originInventory = JSON.parse(localStorage.getItem("Inventory"));
+        let newitem = item;
+        originInventory.push(newitem);
+        localStorage.setItem("Inventory", JSON.stringify(originInventory));
+};
 
 startGame()

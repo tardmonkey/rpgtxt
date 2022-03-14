@@ -24,8 +24,8 @@ export const textNodes = [
             {
                 text:"Observer l'homme",
                 
-                nextText: 3
-              },
+                nextText: 3,
+              }
             
         ]
     },

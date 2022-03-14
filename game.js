@@ -10,9 +10,9 @@ function startGame() {
 }
 
 function createStorageCharInventoryChoices() {
-  localStorage.setItem("Str", JSON.stringify(1)),
-  localStorage.setItem("Agi", JSON.stringify(2)),
-  localStorage.setItem("Int", JSON.stringify(3)),
+  localStorage.setItem("Str", 1),
+  localStorage.setItem("Agi", 2),
+  localStorage.setItem("Int", 3),
   localStorage.setItem("Inventory", JSON.stringify(["chemise"])),
   localStorage.setItem("Choices", JSON.stringify([]))
 }
@@ -69,8 +69,8 @@ function selectOption(option) {
 
   // ajout de stats dans le localStorage
   let statImprove = option.statToImprove;
-  let statImprovedNumber = option.statToImproveNumber;
-  localStorage.setItem(statImprove, statImprovedNumber);
+  let statImproveNumber = option.statToImproveNumber;
+  localStorage.setItem(statImprove, statImproveNumber);
   
   showTextNode(nextTextNodeId)
 }

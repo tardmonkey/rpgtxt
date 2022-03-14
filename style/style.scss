@@ -1,0 +1,44 @@
+@use "normalize.css";
+
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "JMH Typewriter";
+    src: url("./assets/fonts/JMH\ Typewriter.otf");
+    src: url("./assets/fonts/JMH\ Typewriter-Black.otf");
+    src: url("./assets/fonts/JMH\ Typewriter-Bold.otf");
+    src: url("./assets/fonts/JMH\ Typewriter-Thin.otf");
+}
+
+.container{
+        width: 100vw;
+        height: 100vh;
+
+
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        font-family: "JMH Typewriter";
+        font-size: clamp(1rem, 10vw, 1.5rem);
+        font-weight: bold;
+    button{
+        font-family: "JMH Typewriter";
+        font-size: clamp(1rem, 10vw, 1rem);
+        font-weight: bold;
+
+        width: 20vw;
+        padding:1rem;
+        margin:1rem;
+        border:none;
+        border-radius: 5px;
+        box-shadow: 5px 5px 9px -5px rgba(0,0,0,0.42);
+        &:hover{
+            transform:scale(1.1);
+            transition: all ease 0.2s;
+        }
+    }
+}

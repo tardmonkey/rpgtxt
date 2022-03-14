@@ -6,6 +6,15 @@ let state = {}
 function startGame() {
   state = {}
   showTextNode(1)
+  createStorageCharInventoryChoices()
+}
+
+function createStorageCharInventoryChoices() {
+  localStorage.setItem("Str", JSON.stringify(1)),
+  localStorage.setItem("Agi", JSON.stringify(2)),
+  localStorage.setItem("Int", JSON.stringify(3)),
+  localStorage.setItem("Inventory", JSON.stringify(["chemise"])),
+  localStorage.setItem("Choices", JSON.stringify([]))
 }
 
 function showTextNode(textNodeIndex) {
@@ -27,7 +36,18 @@ function showTextNode(textNodeIndex) {
 }
 
 function showOption(option) {
-  return option.requiredState == null || option.requiredState(state)
+  if (!option.itemReq && !option.statReq) {
+    return true
+  } else if (!option.itemReq && option.statReq && option.statReq >= option.statReqNumber) {
+    return true
+  } else if (option.itemReq && localStorage.Inventory.includes(option.itemReq) === true && !option.statReq) {
+    return true
+  } else if (option.itemReq && localStorage.Inventory.includes(option.itemReq) === true && option.statReq && option.statReq >= option.statReqNumber) {
+    return true
+  } else {
+    return false
+  }
+    
 }
 
 function selectOption(option) {
@@ -35,7 +55,23 @@ function selectOption(option) {
   if (nextTextNodeId <= 0) {
     return startGame()
   }
-  state = Object.assign(state, option.setState)
+  // ajout d'item dans le localStorage
+  const originInventory = JSON.parse(localStorage.getItem("Inventory"));
+  const newitem = option.item;
+  originInventory.push(newitem);
+  localStorage.setItem("Inventory", JSON.stringify(originInventory));
+
+  // ajout de choix dans le localStorage
+  const originChoices = JSON.parse(localStorage.getItem("Choices"));
+  const newChoice = option.choice;
+  originChoices.push(newChoice);
+  localStorage.setItem("Choices", JSON.stringify(originChoices));
+
+  // ajout de stats dans le localStorage
+  let statImprove = option.statToImprove;
+  let statImprovedNumber = option.statToImproveNumber;
+  localStorage.setItem(statImprove, statImprovedNumber);
+  
   showTextNode(nextTextNodeId)
 }
 
@@ -45,8 +81,15 @@ const textNodes = [
     text: 'You wake up in a strange place and you see a jar of blue goo near you.',
     options: [
       {
+        // test ajout de ce choix dans le localStorage
+        choice: 1.1,
         text: 'Take the goo',
-        setState: { blueGoo: true },
+        // test ajout de cet item dans l'inventaire
+        item: "bolter",
+        // test augmentation de cette stat dans le localStorage avec la valeur à augmenter ci-dessous
+        // pour augmenter une stat il faudra choisir la statToImprove entre "", la réécrire ci-dessous à côté de localStorage. puis mettre la valeur
+        statToImprove: "Str",
+        statToImproveNumber: parseInt(localStorage.Str) + 2,
         nextText: 2
       },
       {
@@ -60,9 +103,14 @@ const textNodes = [
     text: 'You venture forth in search of answers to where you are when you come across a merchant.',
     options: [
       {
+        choice: 2.1,
         text: 'Trade the goo for a sword',
-        requiredState: (currentState) => currentState.blueGoo,
-        setState: { blueGoo: false, sword: true },
+        // test item requis dans l'inventaire pour afficher cette option
+        itemReq: "chemise",
+        // test stat requise avec la valeur ci-dessous pour afficher cette option
+        statReq: parseInt(localStorage.Str),
+        statReqNumber: 1,
+        item: "armure",
         nextText: 3
       },
       {

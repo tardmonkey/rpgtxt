@@ -1,5 +1,6 @@
 import {textNodes} from "./modules/texte.mjs"
 import {char} from "./modules/char.mjs"
+import Personnage from "./modules/classPersonnage.mjs"
 
 let textContent = document.querySelector(".main")
 let textButton = document.querySelector("button")

@@ -1,16 +1,6 @@
-export function loadChar(){
-  if(localStorage.getItem("Personnage") !== null){
-      let charStored = localStorage.getItem("Personnage")
-      charStored = JSON.parse(charStored)
-      const character = new Personnage(charStored.nom, charStored.prenom)
-      console.log(character)
-  }else{
-      //Ajoute la fonction création de perso sur le boutton envoyer
-  
-  let button = document.getElementById("buttonChar")
-  button.addEventListener("click", () => createChar())
-  }
-}
+import { loadChar } from "./loadChar.mjs"
+loadChar()
+
 export const textNodes = [
     {
         id:1,
@@ -25,7 +15,7 @@ export const textNodes = [
     },
     {
         id:1.1,
-        text:"Bienvenue " + character.nom,
+        text:"Bienvenue " + character,
         options:[
             {
                 text:'Merci cehf',

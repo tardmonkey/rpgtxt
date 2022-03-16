@@ -1,4 +1,4 @@
-// import {loadChar} from "./modules/loadChar.mjs"
+import {loadChar} from "./modules/loadChar.mjs"
 import {textNodes} from "./modules/texte.mjs"
 import Personnage from "./modules/classPersonnage.mjs"
 

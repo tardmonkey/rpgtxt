@@ -1,5 +1,5 @@
+// import {loadChar} from "./modules/loadChar.mjs"
 import {textNodes} from "./modules/texte.mjs"
-import {char} from "./modules/char.mjs"
 import Personnage from "./modules/classPersonnage.mjs"
 
 let textContent = document.querySelector(".main")
@@ -8,6 +8,7 @@ let textButton = document.querySelector("button")
 
 
 function startGame(){
+    
     showTextNode(1)
 }
 
@@ -54,5 +55,19 @@ function selectOption(option) {
           case "agi":char.agi++; console.log(char); break;
       }
   }
+  
+
+  function createChar(){
+    //préviens le fonctionnement normal de <form>
+    event.preventDefault()
+    //on récupère les inputs 
+    let fieldName = document.getElementById("name").value
+    let fieldFirstName = document.getElementById("first_name").value
+    //on créer l'objet Personnage
+    const character = new Personnage(fieldName, fieldFirstName)
+    console.log(character)
+    }
+
+
 
 startGame()

@@ -1,13 +1,35 @@
-import {char} from "./char.mjs"
-
+export function loadChar(){
+  if(localStorage.getItem("Personnage") !== null){
+      let charStored = localStorage.getItem("Personnage")
+      charStored = JSON.parse(charStored)
+      const character = new Personnage(charStored.nom, charStored.prenom)
+      console.log(character)
+  }else{
+      //Ajoute la fonction création de perso sur le boutton envoyer
+  
+  let button = document.getElementById("buttonChar")
+  button.addEventListener("click", () => createChar())
+  }
+}
 export const textNodes = [
     {
         id:1,
-        text:"Dans les ténèbres d'un lointain futur, il n'y a que la guerre",
+        text:"Ton nom ?",
         options:[
             {
                 text:'Commencer',
-                nextText: 2
+                nextText: 1.1
+              },
+           
+        ]
+    },
+    {
+        id:1.1,
+        text:"Bienvenue " + character.nom,
+        options:[
+            {
+                text:'Merci cehf',
+                nextText:2,
               },
            
         ]

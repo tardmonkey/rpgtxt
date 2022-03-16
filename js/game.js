@@ -8,7 +8,7 @@ let textButton = document.querySelector("button")
 
 
 function startGame(){
-    
+    loadChar()
     showTextNode(1)
 }
 

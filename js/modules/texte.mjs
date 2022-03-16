@@ -1,5 +1,3 @@
-import { loadChar } from "./loadChar.mjs"
-loadChar()
 
 export const textNodes = [
     {

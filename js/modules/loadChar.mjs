@@ -7,7 +7,7 @@ export function loadChar(){
   if(localStorage.getItem("Personnage") !== null){
       let charStored = localStorage.getItem("Personnage")
       charStored = JSON.parse(charStored)
-      character = new Personnage(charStored.nom, charStored.prenom)
+      let character = new Personnage(charStored.nom, charStored.prenom)
       console.log(character)
   }else{
       //Ajoute la fonction création de perso sur le boutton envoyer

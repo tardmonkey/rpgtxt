@@ -6,7 +6,7 @@ export default class Personnage {
     this.prenom = prenom;
     this.agilité = 0;
     this.force = 0;
-    this.inteligence = 0;
+    this.intelligence = 0;
     this.inventaire=[];
     this.inventaire[0] = new Objet("Pain et fromages", "De quoi se nourrir pour un repas", 1, 1);
     this.inventaire[1] = new Objet("Chapeau", "L'indispensable à cette époque", 1, 1);

@@ -73,7 +73,7 @@ function fillFichePerso(){
     function showHideFiche() {
         let divFichePerso = document.querySelector(".personnage")
         if (divFichePerso.style.display === "none") {
-            divFichePerso.style.display = "block";
+            divFichePerso.style.display = "flex";
         } else {
             divFichePerso.style.display = "none";
         }

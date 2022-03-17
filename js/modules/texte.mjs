@@ -1,3 +1,8 @@
+import Objet from "./classObjet.mjs"
+import Personnage from "./classPersonnage.mjs"
+import {loadChar} from "./loadChar.mjs"
+
+let char = loadChar()
 
 export const textNodes = [
     {
@@ -5,18 +10,19 @@ export const textNodes = [
         text:"Ton nom ?",
         options:[
             {
-                text:'Commencer',
-                nextText: 1.1
+                text:'Commencer ' + char.getNom(),
+                statUp:"agi",
+                nextText: 1.1                
               },
            
         ]
     },
     {
         id:1.1,
-        text:"Bienvenue " + character,
+        text:"Bienvenue",
         options:[
             {
-                text:'Merci cehf',
+                text:'Merci chef',
                 nextText:2,
               },
            

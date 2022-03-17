@@ -349,6 +349,33 @@ template {
   src: url("./assets/fonts/JMH Typewriter-Bold.otf");
   src: url("./assets/fonts/JMH Typewriter-Thin.otf");
 }
+nav .personnage {
+  display: none;
+  margin: 1rem;
+  border-radius: 5px;
+  background-color: #464646;
+  color: white;
+  width: 12vw;
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .personnage span {
+  font-weight: bold;
+}
+nav #fichePersoBtn {
+  margin: 1rem;
+  border-radius: 5px;
+  background-color: #464646;
+  color: white;
+  width: 10vw;
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main {
   width: 100vw;
   height: 100vh;

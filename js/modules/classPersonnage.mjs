@@ -4,7 +4,7 @@ export default class Personnage {
   constructor(nom, prenom) {
     this.nom = nom;
     this.prenom = prenom;
-    this.agillité = 0;
+    this.agilité = 0;
     this.force = 0;
     this.inteligence = 0;
     this.inventaire=[];
@@ -21,8 +21,16 @@ export default class Personnage {
       this.nom = nouvelleValeur;
   }
   
+  
   setAgilité(nouvelleValeur){
     this.agilité = nouvelleValeur;
+    let charStored = localStorage.getItem("Personnage")
+    charStored = JSON.parse(charStored)
+    console.log(charStored)
+    charStored.agilité = nouvelleValeur
+    console.log(charStored)
+    localStorage.setItem("Personnage", JSON.stringify(charStored))
+    
   }
 
   getAgilité(){
@@ -31,6 +39,12 @@ export default class Personnage {
 
   gainAgilité(){
       this.agilité=this.agilité + 1
+      let charStored = localStorage.getItem("Personnage")
+      charStored = JSON.parse(charStored)
+      console.log(charStored)
+      charStored.agilité = this.agilité++
+      console.log(charStored)
+      localStorage.setItem("Personnage", JSON.stringify(charStored))
   }
 
   setForce(nouvelleValeur) {

@@ -10,11 +10,19 @@ export const textNodes = [
         text:"Ton nom ?",
         options:[
             {
-                text:'Commencer ' + char.getNom(),
+                text:'Agi ' + char.getNom(),
                 statUp:"agi",
                 nextText: 1.1                
               },
-           
+              {
+                text:'Force ' + char.getNom(),
+                statUp:"str",
+                nextText: 1.1                
+              }, {
+                text:'Intel ' + char.getNom(),
+                statUp:"int",
+                nextText: 1.1                
+              },
         ]
     },
     {

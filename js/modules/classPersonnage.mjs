@@ -38,12 +38,10 @@ export default class Personnage {
   }
 
   gainAgilité(){
-      this.agilité=this.agilité + 1
+      this.agilité++
       let charStored = localStorage.getItem("Personnage")
       charStored = JSON.parse(charStored)
-      console.log(charStored)
-      charStored.agilité = this.agilité++
-      console.log(charStored)
+      charStored.agilité = this.agilité
       localStorage.setItem("Personnage", JSON.stringify(charStored))
   }
 

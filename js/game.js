@@ -31,18 +31,20 @@ function showTextNode(textNodeIndex, character) {
         button.innerHTML = element.text
         button.addEventListener('click', () => selectOption(element))
         textContent.appendChild(button)
+
+            //Si l'option a une clé statUp, alors invoke la function statUp avec la clé comme paramètre
+            if(element.statUp) {
+                button.onclick = () => statUp(element.statUp)
+                button.innerHTML += " j'ai statUp "
+            }
         }
         else{
             //Ici il faut check quel est le prérequis (clé require) pour afficher l'option
             //Puis l'afficher ou non
             return false;
         }
-        //Si l'option a une clé statUp, alors invoke la function statUp avec la clé comme paramètre
-        if(element.statUp) {
-            let button = document.querySelector("button")
-            button.addEventListener("click", () => statUp(element.statUp))
-            console.log(element.statUp)
-        }
+       
+        
     });
 }
 
@@ -53,11 +55,13 @@ function selectOption(option) {
 
 //Check quelle est la stat concerné et l'incrémente de 1
   function statUp(stat){
-      switch (stat){
-          case "str":character.gainForce(); console.log(character); break;
-          case "int":character.gainIntelligence(); console.log(character); break;
-          case "agi":character.gainAgilité(); console.log(chcharacterar); break;
-      }
+    let character = loadChar()
+    character.gainAgilité();console.log("statUp fired, agi = " + character.agilité);
+    //   switch (stat){
+    //       case "str":character.gainForce();console.log(character); break;
+    //       case "int":character.gainIntelligence(); console.log(character); break;
+    //       case "agi ":character.gainAgilité(); console.log(character); break;
+    //   }
   }
 
 

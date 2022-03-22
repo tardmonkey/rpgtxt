@@ -12,7 +12,7 @@ function startGame(){
     fillFichePerso()
     showTextNode(1)
     showHideCharCreate()
-   
+    fillInventory()
 }
 
 
@@ -73,6 +73,32 @@ function showHideCharCreate(){
         }
     }
    
+function fillInventory(){
+    let character = loadChar()
+    let inventaire = character.inventaire
+    let divInventaire = document.getElementById("inventaire")
+    
+
+    inventaire.forEach(element => {
+
+        const li = document.createElement('li')
+        console.log(element.nom)
+        li.innerHTML = element.nom
+        divInventaire.appendChild(li)
+        
+    });
+
+    inventaireBtn.addEventListener("click", () => showHideInventaire())
+
+    function showHideInventaire() {
+        let divInventaire = document.querySelector(".inventaire")
+        if (divInventaire.style.display === "none") {
+            divInventaire.style.display = "flex";
+        } else {
+            divInventaire.style.display = "none";
+        }
+      }
+}
 
 function fillFichePerso(){
     let character = loadChar()

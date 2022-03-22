@@ -11,7 +11,7 @@ function startGame(){
     let character = loadChar()
     fillFichePerso()
     showTextNode(1)
-   
+    showHideCharCreate()
    
 }
 
@@ -64,6 +64,15 @@ function selectOption(option) {
     //   }
   }
 
+ //Si un Personnage est présent dans le localstoage, on enlève le formulaire de création de noms
+function showHideCharCreate(){
+    let form = document.getElementById("form__names")
+   
+    if(localStorage.getItem("Personnage") !== null){
+        form.style.display = "none"
+        }
+    }
+   
 
 function fillFichePerso(){
     let character = loadChar()

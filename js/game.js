@@ -13,7 +13,7 @@ function startGame(){
     showTextNode(1)
     showHideCharCreate()
     fillInventory()
-}
+}   
 
 
 

@@ -7,7 +7,7 @@ export function loadChar(){
   if(localStorage.getItem("Personnage") !== null){
       let charStored = localStorage.getItem("Personnage")
       charStored = JSON.parse(charStored)
-      let character = new Personnage(charStored.nom, charStored.prenom)
+      let character = new Personnage(charStored.nom)
      
 
     return character
@@ -19,11 +19,10 @@ export function loadChar(){
         event.preventDefault()
         //on récupère les inputs 
         let fieldName = document.getElementById("name").value
-        let fieldFirstName = document.getElementById("first_name").value
         //on créer l'objet Personnage
-        const character = new Personnage(fieldName, fieldFirstName)
-        console.log(character)
-        }
+        const character = new Personnage(fieldName)
+        location.reload()
+      }
   let button = document.getElementById("buttonChar")
   button.addEventListener("click", () => createChar())
   }

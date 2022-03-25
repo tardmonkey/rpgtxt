@@ -43,6 +43,7 @@ export default class Personnage {
       charStored = JSON.parse(charStored)
       charStored.agilité = this.agilité
       localStorage.setItem("Personnage", JSON.stringify(charStored))
+      
   }
 
   setForce(nouvelleValeur) {

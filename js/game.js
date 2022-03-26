@@ -81,7 +81,7 @@ function fillInventory(){
     inventaire.forEach(element => {
 
         const li = document.createElement('li')
-        li.innerHTML = element.nom
+        li.innerHTML = element.getNom()
         divInventaire.appendChild(li)
         
     });
@@ -141,7 +141,7 @@ function loadCharacter() {
           personnage.setNom(fieldName)
           personnage.setPrenom(fieldFirstName)
           personnage.ajoutObjet("Pain et fromages", "De quoi se nourrir pour un repas", 1, 1)
-          personnage.ajoutObjet(("Chapeau", "L'indispensable à cette époque", 1, 1))
+          personnage.ajoutObjet("Chapeau", "L'indispensable à cette époque", 1, 1)
           }
     let button = document.getElementById("buttonChar")
     button.addEventListener("click", () => createChar())

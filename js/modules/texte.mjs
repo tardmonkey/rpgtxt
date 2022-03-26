@@ -1,3 +1,7 @@
+import Personnage from "./classPersonnage.mjs";
+
+
+
 export const textNodes = [
     {
         id:1,

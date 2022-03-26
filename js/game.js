@@ -11,7 +11,9 @@ let personnage = new Personnage("Temp", "Temp", 0, 0, 0)
 function startGame(){
     loadCharacter()
     showHideCharCreate()
+    showTextNode(1)
     fillInventory()
+    
 }   
 
 
@@ -135,12 +137,11 @@ function loadCharacter() {
           event.preventDefault()
           //on récupère les inputs 
           let fieldName = document.getElementById("name").value
-          let fieldFirstName = document.getElementById("first_name").value
           //on modifie l'objet Personnage
           personnage.setNom(fieldName)
-          personnage.setPrenom(fieldFirstName)
           personnage.ajoutObjet("Pain et fromages", "De quoi se nourrir pour un repas", 1, 1)
           personnage.ajoutObjet(("Chapeau", "L'indispensable à cette époque", 1, 1))
+          location.reload()
           }
     let button = document.getElementById("buttonChar")
     button.addEventListener("click", () => createChar())

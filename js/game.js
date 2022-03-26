@@ -10,17 +10,17 @@ let personnage = new Personnage("Temp", "Temp", 0, 0, 0)
 
 function startGame(){
     loadCharacter()
-    // let character = loadChar()
-    // fillFichePerso()
+    showHideCharCreate()
     showTextNode(1)
-    // showHideCharCreate()
-    // fillInventory()
+    
 }
 
 
 
-function showTextNode(textNodeIndex, character) {
-
+function showTextNode(textNodeIndex) {
+    //Mise à jour de l'inventaire et de la fiche de perso à chaque boucle
+    fillFichePerso()
+    fillInventory()
 
     //trouve le texte via id et l'affiche
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
@@ -64,60 +64,58 @@ function selectOption(option) {
       }
   }
 
-//  //Si un Personnage est présent dans le localstoage, on enlève le formulaire de création de noms
-// function showHideCharCreate(){
-//     let form = document.getElementById("form__names")
+ //Si un Personnage est présent dans le localstoage, on enlève le formulaire de création de noms
+function showHideCharCreate(){
+    let form = document.getElementById("form__names")
    
-//     if(localStorage.getItem("Personnage") !== null){
-//         form.style.display = "none"
-//         }
-//     }
+    if(localStorage.getItem("Personnage") !== null){
+        form.style.display = "none"
+        }
+    }
    
-// function fillInventory(){
-//     let character = loadChar()
-//     let inventaire = character.inventaire
-//     let divInventaire = document.getElementById("inventaire")
+function fillInventory(){
+    let inventaire = personnage.getInventaire()
+    let divInventaire = document.getElementById("inventaire")
     
 
-//     inventaire.forEach(element => {
+    inventaire.forEach(element => {
 
-//         const li = document.createElement('li')
-//         li.innerHTML = element.nom
-//         divInventaire.appendChild(li)
+        const li = document.createElement('li')
+        li.innerHTML = element.nom
+        divInventaire.appendChild(li)
         
-//     });
+    });
 
-//     inventaireBtn.addEventListener("click", () => showHideInventaire())
+    inventaireBtn.addEventListener("click", () => showHideInventaire())
 
-//     function showHideInventaire() {
-//         let divInventaire = document.querySelector(".inventaire")
-//         if (divInventaire.style.display === "none") {
-//             divInventaire.style.display = "flex";
-//         } else {
-//             divInventaire.style.display = "none";
-//         }
-//       }
-// }
+    function showHideInventaire() {
+        let divInventaire = document.querySelector(".inventaire")
+        if (divInventaire.style.display === "none") {
+            divInventaire.style.display = "flex";
+        } else {
+            divInventaire.style.display = "none";
+        }
+      }
+}
 
-// function fillFichePerso(){
-//     let character = loadChar()
-//     ficheNom.innerHTML = `Nom : <span> ${character.getNom()} </span>`
-//     ficheAgi.innerHTML = `Agilité : <span> ${character.getAgilité()}</span> `
-//     ficheIntel.innerHTML = `Intelligence : <span> ${character.getIntelligence()}</span> `
-//     ficheForce.innerHTML = `Force : <span> ${character.getForce()} </span>`
+function fillFichePerso(){
+    ficheNom.innerHTML = `Nom : <span> ${personnage.getNom()} </span>`
+    ficheAgi.innerHTML = `Agilité : <span> ${personnage.getAgilité()}</span> `
+    ficheIntel.innerHTML = `Intelligence : <span> ${personnage.getIntelligence()}</span> `
+    ficheForce.innerHTML = `Force : <span> ${personnage.getForce()} </span>`
 
-//     fichePersoBtn.addEventListener("click", () => showHideFiche())
+    fichePersoBtn.addEventListener("click", () => showHideFiche())
 
-//     function showHideFiche() {
-//         let divFichePerso = document.querySelector(".personnage")
-//         if (divFichePerso.style.display === "none") {
-//             divFichePerso.style.display = "flex";
-//         } else {
-//             divFichePerso.style.display = "none";
-//         }
-//       }
+    function showHideFiche() {
+        let divFichePerso = document.querySelector(".personnage")
+        if (divFichePerso.style.display === "none") {
+            divFichePerso.style.display = "flex";
+        } else {
+            divFichePerso.style.display = "none";
+        }
+      }
 
-// }
+}
 
 function loadCharacter() {
     if(localStorage.getItem("Personnage") !== null) {

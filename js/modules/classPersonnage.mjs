@@ -119,4 +119,9 @@ export default class Personnage {
       this.inventaire.push(objet);
     }
   }
+
+  getInventaire(){
+    return this.inventaire
+    
+  }
 }

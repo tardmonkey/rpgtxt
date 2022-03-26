@@ -140,7 +140,7 @@ function loadCharacter() {
           //on modifie l'objet Personnage
           personnage.setNom(fieldName)
           personnage.ajoutObjet("Pain et fromages", "De quoi se nourrir pour un repas", 1, 1)
-          personnage.ajoutObjet(("Chapeau", "L'indispensable à cette époque", 1, 1))
+          personnage.ajoutObjet("Chapeau", "L'indispensable à cette époque", 1, 1)
           location.reload()
           }
     let button = document.getElementById("buttonChar")

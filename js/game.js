@@ -1,18 +1,20 @@
-import {loadChar} from "./modules/loadChar.mjs"
 import {textNodes} from "./modules/texte.mjs"
 import Personnage from "./modules/classPersonnage.mjs"
 
 let textContent = document.querySelector(".main")
 let textButton = document.querySelector("button")
 
+let personnage = new Personnage("Temp", "Temp", 0, 0, 0)
+
 
 
 function startGame(){
-    let character = loadChar()
-    fillFichePerso()
+    loadCharacter()
+    // let character = loadChar()
+    // fillFichePerso()
     showTextNode(1)
-    showHideCharCreate()
-    fillInventory()
+    // showHideCharCreate()
+    // fillInventory()
 }
 
 
@@ -55,69 +57,92 @@ function selectOption(option) {
 
 //Check quelle est la stat concerné et l'incrémente de 1
   function statUp(stat){
-    let character = loadChar()
-    character.gainAgilité();console.log("statUp fired, agi = " + character.agilité);
-    //   switch (stat){
-    //       case "str":character.gainForce();console.log(character); break;
-    //       case "int":character.gainIntelligence(); console.log(character); break;
-    //       case "agi ":character.gainAgilité(); console.log(character); break;
-    //   }
+      switch (stat){
+          case "str":personnage.gainForce();break;
+          case "int":personnage.gainIntelligence();break;
+          case "agi":personnage.gainAgilité();break;
+      }
   }
 
- //Si un Personnage est présent dans le localstoage, on enlève le formulaire de création de noms
-function showHideCharCreate(){
-    let form = document.getElementById("form__names")
+//  //Si un Personnage est présent dans le localstoage, on enlève le formulaire de création de noms
+// function showHideCharCreate(){
+//     let form = document.getElementById("form__names")
    
-    if(localStorage.getItem("Personnage") !== null){
-        form.style.display = "none"
-        }
-    }
+//     if(localStorage.getItem("Personnage") !== null){
+//         form.style.display = "none"
+//         }
+//     }
    
-function fillInventory(){
-    let character = loadChar()
-    let inventaire = character.inventaire
-    let divInventaire = document.getElementById("inventaire")
+// function fillInventory(){
+//     let character = loadChar()
+//     let inventaire = character.inventaire
+//     let divInventaire = document.getElementById("inventaire")
     
 
-    inventaire.forEach(element => {
+//     inventaire.forEach(element => {
 
-        const li = document.createElement('li')
-        console.log(element.nom)
-        li.innerHTML = element.nom
-        divInventaire.appendChild(li)
+//         const li = document.createElement('li')
+//         li.innerHTML = element.nom
+//         divInventaire.appendChild(li)
         
-    });
+//     });
 
-    inventaireBtn.addEventListener("click", () => showHideInventaire())
+//     inventaireBtn.addEventListener("click", () => showHideInventaire())
 
-    function showHideInventaire() {
-        let divInventaire = document.querySelector(".inventaire")
-        if (divInventaire.style.display === "none") {
-            divInventaire.style.display = "flex";
-        } else {
-            divInventaire.style.display = "none";
-        }
-      }
-}
+//     function showHideInventaire() {
+//         let divInventaire = document.querySelector(".inventaire")
+//         if (divInventaire.style.display === "none") {
+//             divInventaire.style.display = "flex";
+//         } else {
+//             divInventaire.style.display = "none";
+//         }
+//       }
+// }
 
-function fillFichePerso(){
-    let character = loadChar()
-    ficheNom.innerHTML = `Nom : <span> ${character.getNom()} </span>`
-    ficheAgi.innerHTML = `Agilité : <span> ${character.getAgilité()}</span> `
-    ficheIntel.innerHTML = `Intelligence : <span> ${character.getIntelligence()}</span> `
-    ficheForce.innerHTML = `Force : <span> ${character.getForce()} </span>`
+// function fillFichePerso(){
+//     let character = loadChar()
+//     ficheNom.innerHTML = `Nom : <span> ${character.getNom()} </span>`
+//     ficheAgi.innerHTML = `Agilité : <span> ${character.getAgilité()}</span> `
+//     ficheIntel.innerHTML = `Intelligence : <span> ${character.getIntelligence()}</span> `
+//     ficheForce.innerHTML = `Force : <span> ${character.getForce()} </span>`
 
-    fichePersoBtn.addEventListener("click", () => showHideFiche())
+//     fichePersoBtn.addEventListener("click", () => showHideFiche())
 
-    function showHideFiche() {
-        let divFichePerso = document.querySelector(".personnage")
-        if (divFichePerso.style.display === "none") {
-            divFichePerso.style.display = "flex";
-        } else {
-            divFichePerso.style.display = "none";
-        }
-      }
+//     function showHideFiche() {
+//         let divFichePerso = document.querySelector(".personnage")
+//         if (divFichePerso.style.display === "none") {
+//             divFichePerso.style.display = "flex";
+//         } else {
+//             divFichePerso.style.display = "none";
+//         }
+//       }
 
+// }
+
+function loadCharacter() {
+    if(localStorage.getItem("Personnage") !== null) {
+        let charStored = localStorage.getItem("Personnage")
+        charStored = JSON.parse(charStored)
+        personnage.setNom(charStored.nom)
+        personnage.setPrenom(charStored.prenom)
+        personnage.setAgilité(charStored.agilité)
+        personnage.setForce(charStored.force)
+        personnage.setIntelligence(charStored.intelligence)
+    }else{
+        //Ajoute la fonction création de perso sur le boutton envoyer
+        function createChar(){
+          //préviens le fonctionnement normal de <form>
+          event.preventDefault()
+          //on récupère les inputs 
+          let fieldName = document.getElementById("name").value
+          let fieldFirstName = document.getElementById("first_name").value
+          //on modifie l'objet Personnage
+          personnage.setNom(fieldName)
+          personnage.setPrenom(fieldFirstName)
+          }
+    let button = document.getElementById("buttonChar")
+    button.addEventListener("click", () => createChar())
+    }
 }
 
 

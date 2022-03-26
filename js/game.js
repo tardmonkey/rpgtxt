@@ -126,6 +126,9 @@ function loadCharacter() {
         personnage.setAgilité(charStored.agilité)
         personnage.setForce(charStored.force)
         personnage.setIntelligence(charStored.intelligence)
+        charStored.inventaire.forEach(element => {
+            personnage.ajoutObjet(element.nom, element.description, element.nombreUtilisationMax, element.quantité)
+        });
     }else{
         //Ajoute la fonction création de perso sur le boutton envoyer
         function createChar(){
@@ -137,6 +140,8 @@ function loadCharacter() {
           //on modifie l'objet Personnage
           personnage.setNom(fieldName)
           personnage.setPrenom(fieldFirstName)
+          personnage.ajoutObjet("Pain et fromages", "De quoi se nourrir pour un repas", 1, 1)
+          personnage.ajoutObjet(("Chapeau", "L'indispensable à cette époque", 1, 1))
           }
     let button = document.getElementById("buttonChar")
     button.addEventListener("click", () => createChar())

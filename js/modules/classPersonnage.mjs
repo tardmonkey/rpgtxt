@@ -8,8 +8,8 @@ export default class Personnage {
     this.force = force;
     this.intelligence = intel;
     this.inventaire=[];
-    this.inventaire[0] = new Objet("Pain et fromages", "De quoi se nourrir pour un repas", 1, 1);
-    this.inventaire[1] = new Objet("Chapeau", "L'indispensable à cette époque", 1, 1);
+    // this.inventaire[0] = new Objet("Pain et fromages", "De quoi se nourrir pour un repas", 1, 1);
+    // this.inventaire[1] = new Objet("Chapeau", "L'indispensable à cette époque", 1, 1);
   }
 
   getNom() {
@@ -70,10 +70,8 @@ export default class Personnage {
   }
 
   gainIntelligence(){
-    console.log(this)
     this.intelligence=this.intelligence + 1
     localStorage.setItem("Personnage", JSON.stringify(this));
-    console.log(this)
   }
   
   presenceObjet(nom){
@@ -99,6 +97,7 @@ export default class Personnage {
     if (index !== -1) {
       this.inventaire.splice(index, 1);
     }
+    localStorage.setItem("Personnage", JSON.stringify(this));
   }
   
   utiliserObjet(nom) {
@@ -107,6 +106,7 @@ export default class Personnage {
     if(objet.getQuantité() == 0){
         this.deleteObjet(nom);
     }
+    localStorage.setItem("Personnage", JSON.stringify(this));
   }
 
   ajoutObjet(nom, description, nombreUtilisationMax, quantité){
@@ -116,6 +116,7 @@ export default class Personnage {
       let objet = new Objet(nom,description,nombreUtilisationMax, quantité);
       this.inventaire.push(objet);
     }
+    localStorage.setItem("Personnage", JSON.stringify(this));
   }
 
   getInventaire(){

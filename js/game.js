@@ -77,12 +77,13 @@ function showHideCharCreate(){
 function fillInventory(){
     let inventaire = personnage.getInventaire()
     let divInventaire = document.getElementById("inventaire")
-    
+    divInventaire.innerHTML = ""
+
 
     inventaire.forEach(element => {
 
         const li = document.createElement('li')
-        li.innerHTML = element.nom
+        li.innerHTML = element.nom + " " + element.quantité
         divInventaire.appendChild(li)
         
     });

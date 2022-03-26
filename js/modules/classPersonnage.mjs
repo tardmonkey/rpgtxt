@@ -41,10 +41,8 @@ export default class Personnage {
   }
 
   gainAgilité(){
-    console.log(this)
     this.agilité = this.agilité + 1
     localStorage.setItem("Personnage", JSON.stringify(this));
-    console.log(this)
   }
 
   setForce(nouvelleValeur) {

@@ -1,24 +1,25 @@
-import {loadChar} from "./modules/loadChar.mjs"
 import {textNodes} from "./modules/texte.mjs"
 import Personnage from "./modules/classPersonnage.mjs"
 
 let textContent = document.querySelector(".main")
 let textButton = document.querySelector("button")
 
+let personnage = new Personnage("Temp", "Temp", 0, 0, 0)
+
 
 
 function startGame(){
-    let character = loadChar()
-    fillFichePerso()
-    showTextNode(1)
+    loadCharacter()
     showHideCharCreate()
     fillInventory()
 }   
 
 
 
-function showTextNode(textNodeIndex, character) {
-
+function showTextNode(textNodeIndex) {
+    //Mise à jour de l'inventaire et de la fiche de perso à chaque boucle
+    fillFichePerso()
+    fillInventory()
 
     //trouve le texte via id et l'affiche
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
@@ -55,13 +56,11 @@ function selectOption(option) {
 
 //Check quelle est la stat concerné et l'incrémente de 1
   function statUp(stat){
-    let character = loadChar()
-    character.gainAgilité();console.log("statUp fired, agi = " + character.agilité);
-    //   switch (stat){
-    //       case "str":character.gainForce();console.log(character); break;
-    //       case "int":character.gainIntelligence(); console.log(character); break;
-    //       case "agi ":character.gainAgilité(); console.log(character); break;
-    //   }
+      switch (stat){
+          case "str":personnage.gainForce();break;
+          case "int":personnage.gainIntelligence();break;
+          case "agi":personnage.gainAgilité();break;
+      }
   }
 
  //Si un Personnage est présent dans le localstoage, on enlève le formulaire de création de noms
@@ -74,15 +73,13 @@ function showHideCharCreate(){
     }
    
 function fillInventory(){
-    let character = loadChar()
-    let inventaire = character.inventaire
+    let inventaire = personnage.getInventaire()
     let divInventaire = document.getElementById("inventaire")
     
 
     inventaire.forEach(element => {
 
         const li = document.createElement('li')
-        console.log(element.nom)
         li.innerHTML = element.nom
         divInventaire.appendChild(li)
         
@@ -101,11 +98,10 @@ function fillInventory(){
 }
 
 function fillFichePerso(){
-    let character = loadChar()
-    ficheNom.innerHTML = `Nom : <span> ${character.getNom()} </span>`
-    ficheAgi.innerHTML = `Agilité : <span> ${character.getAgilité()}</span> `
-    ficheIntel.innerHTML = `Intelligence : <span> ${character.getIntelligence()}</span> `
-    ficheForce.innerHTML = `Force : <span> ${character.getForce()} </span>`
+    ficheNom.innerHTML = `Nom : <span> ${personnage.getNom()} </span>`
+    ficheAgi.innerHTML = `Agilité : <span> ${personnage.getAgilité()}</span> `
+    ficheIntel.innerHTML = `Intelligence : <span> ${personnage.getIntelligence()}</span> `
+    ficheForce.innerHTML = `Force : <span> ${personnage.getForce()} </span>`
 
     fichePersoBtn.addEventListener("click", () => showHideFiche())
 
@@ -118,6 +114,37 @@ function fillFichePerso(){
         }
       }
 
+}
+
+function loadCharacter() {
+    if(localStorage.getItem("Personnage") !== null) {
+        let charStored = localStorage.getItem("Personnage")
+        charStored = JSON.parse(charStored)
+        personnage.setNom(charStored.nom)
+        personnage.setPrenom(charStored.prenom)
+        personnage.setAgilité(charStored.agilité)
+        personnage.setForce(charStored.force)
+        personnage.setIntelligence(charStored.intelligence)
+        charStored.inventaire.forEach(element => {
+            personnage.ajoutObjet(element.nom, element.description, element.nombreUtilisationMax, element.quantité)
+        });
+    }else{
+        //Ajoute la fonction création de perso sur le boutton envoyer
+        function createChar(){
+          //préviens le fonctionnement normal de <form>
+          event.preventDefault()
+          //on récupère les inputs 
+          let fieldName = document.getElementById("name").value
+          let fieldFirstName = document.getElementById("first_name").value
+          //on modifie l'objet Personnage
+          personnage.setNom(fieldName)
+          personnage.setPrenom(fieldFirstName)
+          personnage.ajoutObjet("Pain et fromages", "De quoi se nourrir pour un repas", 1, 1)
+          personnage.ajoutObjet(("Chapeau", "L'indispensable à cette époque", 1, 1))
+          }
+    let button = document.getElementById("buttonChar")
+    button.addEventListener("click", () => createChar())
+    }
 }
 
 

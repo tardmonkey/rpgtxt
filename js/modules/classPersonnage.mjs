@@ -1,36 +1,39 @@
 import Objet from "./classObjet.mjs";
   
 export default class Personnage {
-  constructor(nom, prenom) {
+  constructor(nom, prenom, agi, force, intel) {
     this.nom = nom;
     this.prenom = prenom;
-    this.agilité = 0;
-    this.force = 0;
-    this.intelligence = 0;
+    this.agilité = agi;
+    this.force = force;
+    this.intelligence = intel;
     this.inventaire=[];
-    this.inventaire[0] = new Objet("Pain et fromages", "De quoi se nourrir pour un repas", 1, 1);
-    this.inventaire[1] = new Objet("Chapeau", "L'indispensable à cette époque", 1, 1);
-    localStorage.setItem("Personnage", JSON.stringify(this));
+    // this.inventaire[0] = new Objet("Pain et fromages", "De quoi se nourrir pour un repas", 1, 1);
+    // this.inventaire[1] = new Objet("Chapeau", "L'indispensable à cette époque", 1, 1);
   }
 
-    getNom() {
+  getNom() {
       return this.nom;
   }
   
   setNom(nouvelleValeur){
       this.nom = nouvelleValeur;
+      localStorage.setItem("Personnage", JSON.stringify(this));
+  }
+
+  getPrenom() {
+    return this.prenom;
+  }
+
+  setPrenom(nouvelleValeur){
+    this.prenom = nouvelleValeur;
+    localStorage.setItem("Personnage", JSON.stringify(this));
   }
   
   
   setAgilité(nouvelleValeur){
     this.agilité = nouvelleValeur;
-    let charStored = localStorage.getItem("Personnage")
-    charStored = JSON.parse(charStored)
-    console.log(charStored)
-    charStored.agilité = nouvelleValeur
-    console.log(charStored)
-    localStorage.setItem("Personnage", JSON.stringify(charStored))
-    
+    localStorage.setItem("Personnage", JSON.stringify(this));
   }
 
   getAgilité(){
@@ -48,17 +51,22 @@ export default class Personnage {
 
   setForce(nouvelleValeur) {
     this.force = nouvelleValeur;
+    localStorage.setItem("Personnage", JSON.stringify(this));
   }
   getForce(){
     return this.force;
   }
 
   gainForce(){
-      this.force=this.force + 1
+    console.log(this)
+    this.force=this.force + 1
+    localStorage.setItem("Personnage", JSON.stringify(this));
+    console.log(this)
   }
 
   setIntelligence(nouvelleValeur){
     this.intelligence = nouvelleValeur;
+    localStorage.setItem("Personnage", JSON.stringify(this));
   }
 
   getIntelligence(){
@@ -66,7 +74,8 @@ export default class Personnage {
   }
 
   gainIntelligence(){
-      this.intelligence=this.inteligence + 1
+    this.intelligence=this.intelligence + 1
+    localStorage.setItem("Personnage", JSON.stringify(this));
   }
   
   presenceObjet(nom){
@@ -92,6 +101,7 @@ export default class Personnage {
     if (index !== -1) {
       this.inventaire.splice(index, 1);
     }
+    localStorage.setItem("Personnage", JSON.stringify(this));
   }
   
   utiliserObjet(nom) {
@@ -100,6 +110,7 @@ export default class Personnage {
     if(objet.getQuantité() == 0){
         this.deleteObjet(nom);
     }
+    localStorage.setItem("Personnage", JSON.stringify(this));
   }
 
   ajoutObjet(nom, description, nombreUtilisationMax, quantité){
@@ -109,5 +120,11 @@ export default class Personnage {
       let objet = new Objet(nom,description,nombreUtilisationMax, quantité);
       this.inventaire.push(objet);
     }
+    localStorage.setItem("Personnage", JSON.stringify(this));
+  }
+
+  getInventaire(){
+    return this.inventaire
+    
   }
 }

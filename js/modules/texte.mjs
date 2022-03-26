@@ -1,25 +1,19 @@
-import Objet from "./classObjet.mjs"
-import Personnage from "./classPersonnage.mjs"
-import {loadChar} from "./loadChar.mjs"
-
-let char = loadChar()
-
 export const textNodes = [
     {
         id:1,
         text:"Ton nom ?",
         options:[
             {
-                text:'Agi ' + char.getNom(),
+                text:'Agi ',
                 statUp:"agi",
                 nextText: 1.1                
               },
               {
-                text:'Force ' + char.getNom(),
+                text:'Force ',
                 statUp:"str",
                 nextText: 1.1                
               }, {
-                text:'Intel ' + char.getNom(),
+                text:'Intel ',
                 statUp:"int",
                 nextText: 1.1                
               },

@@ -10,7 +10,7 @@ export function loadChar(){
       let character = new Personnage(charStored.nom)
      
 
-    return character
+//     return character
 
   }else{
       //Ajoute la fonction création de perso sur le boutton envoyer

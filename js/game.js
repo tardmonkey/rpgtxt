@@ -77,7 +77,7 @@ function fillInventory(){
     let inventaire = personnage.getInventaire()
     let divInventaire = document.getElementById("inventaire")
     
-
+    divInventaire.innerHTML = '';
     inventaire.forEach(element => {
 
         const li = document.createElement('li')

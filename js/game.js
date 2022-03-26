@@ -18,6 +18,7 @@ function startGame(){
 
 
 function showTextNode(textNodeIndex) {
+
     //Mise à jour de l'inventaire et de la fiche de perso à chaque boucle
     fillFichePerso()
     fillInventory()

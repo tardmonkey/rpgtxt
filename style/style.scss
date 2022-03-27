@@ -90,14 +90,27 @@ nav {
             height:1rem;
         }
     }
-   
-
+   aside{
+    user-select: none;
+    cursor:pointer;
+    margin:1rem;
+    border-radius:5px;
+    background-color: rgb(70, 70, 70);
+    color:white;
+    width:10vw;
+    height:3vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     
+   }
+
+   
 }
 
 main{
   overflow: hidden;
-  
+
     
 }
 .main{
@@ -127,6 +140,39 @@ main{
         &:hover{
             transform:scale(1.1);
             transition: all ease 0.2s;
+        }
+    }
+}
+
+#reset__modale{
+    width: 50%;
+    height:50%;
+    background-color: red;
+    position: absolute;
+    top:30%;
+    left:30%;
+    z-index:2;
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    background-blend-mode: darken;
+    span{
+        font-size: 2rem;
+        &:first-child{
+            font-size: 3rem;
+        }
+        &:nth-child(2), &:nth-child(3){
+            color:black;
+            background-color: white;
+            width: 33%;
+            margin:1rem;
+            padding:1rem;
+            text-align: center;
+            &:hover{
+                transform: scale(1.1);
+            }
         }
     }
 }

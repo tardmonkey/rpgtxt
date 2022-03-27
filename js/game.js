@@ -4,7 +4,7 @@ import Personnage from "./modules/classPersonnage.mjs"
 let textContent = document.querySelector(".main")
 let textButton = document.querySelector("button")
 
-let personnage = new Personnage("Temp", "Temp", 0, 0, 0)
+import { personnage } from "./modules/loadChar.mjs"
 
 
 
@@ -13,7 +13,7 @@ function startGame(){
     showHideCharCreate()
     showTextNode(1)
     fillInventory()
-    
+    console.log(personnage.getNom())
 }   
 
 
@@ -156,5 +156,36 @@ function loadCharacter() {
     }
 }
 
+//BOUTON RESET
+let resetBtn = document.getElementById("resetBtn")
+resetBtn.addEventListener("click", () => showReset())
+
+function showReset(){
+    let divReset = document.getElementById("reset__modale")
+    divReset.style.display = "flex";
+}
+
+let resetBtnNo = document.getElementById("resetBtn__no")
+resetBtnNo.addEventListener("click", () => hideReset())
+
+function hideReset(){
+    let divReset = document.getElementById("reset__modale")
+    divReset.style.display = "none";
+}
+
+
+let resetBtnYes = document.getElementById("resetBtn__yes")
+resetBtnYes.addEventListener("click", () => resetGame())
+
+function resetGame(){
+    localStorage.clear()
+    console.log(personnage)
+    for (const key in personnage) {
+        delete personnage[key];
+      }
+    hideReset()
+    console.log(personnage)
+
+}
 
 startGame()

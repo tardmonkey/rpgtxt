@@ -12,6 +12,60 @@
     src: url("./assets/fonts/JMH\ Typewriter-Thin.otf");
 }
 
+article{
+    background-color: slategray;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height:100vh;
+    font-family: "JMH Typewriter";
+
+    p{
+        font-size: clamp(0.8rem, 2rem, 2rem);
+        
+    }
+
+    form{
+        
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:1rem;
+        width:25%;
+        label{
+            font-size: clamp(0.8rem, 1.5rem, 2rem);
+        }
+
+        input{
+            height:4vh;
+            width:calc(30% + 35vw);
+            border-radius: 15px;
+            border:none;
+            background-color: white;
+            padding:0.3rem;
+            
+            &:focus-visible{
+                outline: none;
+                background-image: url("./assets/img/arrow-right-solid.svg");
+            background-repeat: no-repeat;
+            background-position: 95%;
+            background-size: 16px 16px;
+            filter:brightness(95%)
+            
+            }
+            
+        }
+
+        button{
+           display:none;
+        }
+        
+    }
+}
+
 nav {
     display:flex;
     

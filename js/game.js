@@ -73,6 +73,8 @@ function showHideCharCreate() {
 
   if (localStorage.getItem("Personnage") !== null) {
     form.style.display = "none";
+    document.querySelector("article").style.display = "none";
+
   }
   else{
       document.querySelector("main").style.display = "none";
@@ -111,6 +113,7 @@ function showHideFiche() {
     divFichePerso.style.display = "flex";
   } else {
     divFichePerso.style.display = "none";
+    
   }
 }
 

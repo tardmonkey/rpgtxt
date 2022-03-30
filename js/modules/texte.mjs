@@ -1,7 +1,11 @@
+import Personnage from "./classPersonnage.mjs";
+
+import { personnage } from "./loadChar.mjs";
+
 export const textNodes = [
     {
         id:1,
-        text:"Ton nom ?",
+        text:"Ton nom ? " + personnage.getNom(),
         options:[
             {
                 text:'Agi ',

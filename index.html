@@ -29,19 +29,26 @@
                     
                 </ul>
             </div>
-
+            <aside id="resetBtn">Reset</aside>
+            
         </nav>
-        <form id="form__names">
-            <label for="first_name">Prénom</label>
-            <input id="first_name" name="first_name">
-            <label for="name">Nom</label>
-            <input id="name" name="name">
-            <button id="buttonChar" type="submit">Envoyer</button>
-        </form>
+        
         <div class="main">
             
         </div>
     </main>
-    
+    <article>
+        <p>Quel est ton nom ?</p>
+        <form id="form__names">
+            <label for="name"></label>
+            <input id="name" name="fname" type="text">
+            <button id="buttonChar" type="submit">Tel est mon nom</button>
+        </form>
+    </article>
+    <div id="reset__modale">
+        <span>Reset ?</span>
+        <span id="resetBtn__yes">Oui</span>
+        <span id="resetBtn__no">Non</span>
+    </div>
 </body>
 </html>

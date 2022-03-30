@@ -18,3 +18,12 @@ Les choix sont affichés avec forEach, donc il n'y a pas de limites de choix
 * TOUT le CSS
 * Ajouter images ?
 * Ajouter musiques ainsi que sons pour certains events ?
+* Ajouter méthode getInventaire aux objets
+* L'inventaire et la fiche perso doit se refresh quand on ajoute ou change anythings
+* Pourquoi double click sur fiche perso et inventaire ?
+
+
+# Done
+
+
+* Fonctionnement fillInvetory() pas bon, doit écraser ce qui existe déjà et non additionner

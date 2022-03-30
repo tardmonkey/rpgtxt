@@ -1,4 +1,4 @@
-import { textNodes } from "./modules/texte.mjs";
+import { loadTextNodes } from "./modules/texte.mjs";
 import Personnage from "./modules/classPersonnage.mjs";
 
 let textContent = document.querySelector(".main");
@@ -17,7 +17,7 @@ function showTextNode(textNodeIndex) {
   //Mise à jour de l'inventaire et de la fiche de perso à chaque boucle
   fillFichePerso();
   fillInventory();
-
+  let textNodes = loadTextNodes()
   //trouve le texte via id et l'affiche
   const textNode = textNodes.find((textNode) => textNode.id === textNodeIndex);
   textContent.innerHTML = textNode.text;

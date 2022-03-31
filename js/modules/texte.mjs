@@ -6,65 +6,62 @@ export function loadTextNodes(){
   let textNodes = [
       {
           id:1,
-          text:"Ton nom ? " + personnage.getNom(),
+          text:`Oh oui ! Bien sûr ! Suis-je bête… Vous savez avec toutes les personnes que je vois défiler, parfois j’ai la mémoire qui flanche. <br />
+          Est-ce que cela vous ennuie si nous parlons un peu plus de vous ? <br/> J’ai besoin d’un peu plus d’informations. `,
           options:[
               {
-                  text:'Agi ',
-                  statUp:"agi",
+                  text:'Non, pas de problème. ',
                   nextText: 1.1                
                 },
                 {
-                  text:'Force ',
-                  statUp:"str",
-                  nextText: 1.1                
+                  text:'Oui, ça m’ennuie. ',
+                  nextText: 1.2                
                 }, {
-                  text:'Intel ',
-                  statUp:"int",
-                  nextText: 1.1                
+                  text:'Pourquoi avez-vous d’informations ?  ',
+                  nextText: 1.3             
                 },
           ]
       },
       {
           id:1.1,
-          text:"Bienvenue",
+          text:"Parfait ! ",
           options:[
               {
-                  text:'Merci chef',
-                  nextText:2,
+                  
                 },
             
           ]
       },
       {
-          id:2,
-          text:"La pièce est froide, humide et vide si on omet l'homme immense qui meumble un quart de l'endroit à lui tout seul.",
+          id:1.2,
+          text:"Vous-êtes sûr ? Cela pourrait vous êtres bien utile, aux regards ce qu’il vous attend …",
           options:[
               {
-                  text:"Observer la pièce",
+                  text:"Oui, je ne veux pas répondre à vos questions.",
                   
-                  nextText: 3.1
+                  nextText: 0
                 },
               {
-                  text:"Observer l'homme",
+                  text:"En fait non, je veux bien répondre à vos question",
                   
-                  nextText: 3
+                  nextText: 0
                 },
               
           ]
       },
       {
-          id:3,
-          text:"L'homme au crâne parfaitement rasé et à la tunique blanche rudimantaire vous mets mal à l'aise. Hormis sa taille et sa carrure, parfaitement hors norme -est ce qu'un être humain est réelement capable d'atteindre telles proportions ?- son âge est impossible à placer. Ses traits sont assez jeunes, la trentaine peut être, mais ses yeux perçants semblent porter en eux le fardeau de siècles de souffrances.",
+          id:1.3,
+          text:"Disons que vos réponses pourraient se trouver très utile aux regards de ce qu’il vous attend … ",
           options:[
               {
-                  text:"Chercher des détails",
+                  text:"je ne veux pas répondre à vos questions.",
                   
-                  nextText: 4
+                  nextText: 0
                 },
               {
-                  text:"Observer la pièce",
+                  text:"je veux bien répondre à vos questions. ",
                   
-                  nextText: 4
+                  nextText: 0
                 },
               
           ]

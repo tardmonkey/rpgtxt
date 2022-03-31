@@ -361,6 +361,7 @@ article {
 }
 article p {
   font-size: 2rem;
+  width: 50%;
 }
 article form {
   display: flex;
@@ -401,7 +402,7 @@ nav .personnage {
   position: fixed;
   margin: 1rem;
   border-radius: 5px;
-  background-color: #464646;
+  background-color: rgb(70, 70, 70);
   color: white;
   width: 12vw;
   height: 12vh;
@@ -417,7 +418,7 @@ nav .inventaire {
   position: fixed;
   margin: 1rem;
   border-radius: 5px;
-  background-color: #464646;
+  background-color: rgb(70, 70, 70);
   color: white;
   width: 12vw;
   height: 12vh;
@@ -434,7 +435,7 @@ nav #fichePersoBtn {
   z-index: 1;
   margin: 1rem;
   border-radius: 5px;
-  background-color: #464646;
+  background-color: rgb(70, 70, 70);
   color: white;
   width: 10vw;
   height: 3vh;
@@ -455,7 +456,7 @@ nav #inventaireBtn {
   cursor: pointer;
   margin: 1rem;
   border-radius: 5px;
-  background-color: #464646;
+  background-color: rgb(70, 70, 70);
   color: white;
   width: 10vw;
   height: 3vh;
@@ -476,7 +477,7 @@ nav aside {
   cursor: pointer;
   margin: 1rem;
   border-radius: 5px;
-  background-color: #464646;
+  background-color: rgb(70, 70, 70);
   color: white;
   width: 10vw;
   height: 3vh;
@@ -487,11 +488,16 @@ nav aside {
 
 main {
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .main {
-  width: 100vw;
+  width: 50vw;
   height: 90vh;
+  line-height: 140%;
   display: flex;
   flex-direction: column;
   align-items: center;

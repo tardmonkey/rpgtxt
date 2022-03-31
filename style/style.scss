@@ -24,6 +24,7 @@ article{
 
     p{
         font-size: clamp(0.8rem, 2rem, 2rem);
+        width:50%;
         
     }
 
@@ -164,13 +165,16 @@ nav {
 
 main{
   overflow: hidden;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
     
 }
 .main{
-        width: 100vw;
+        width: 50vw;
         height: 90vh;
-
+        line-height: 140%;
 
         display:flex;
         flex-direction: column;

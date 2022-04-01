@@ -34,7 +34,6 @@ function showTextNode(textNodeIndex) {
       //Si l'option a une clé statUp, alors invoke la function statUp avec la clé comme paramètre
       if (element.statUp) {
         button.onclick = () => statUp(element.statUp);
-        button.innerHTML += " j'ai statUp ";
       }
     } else {
       //Ici il faut check quel est le prérequis (clé require) pour afficher l'option

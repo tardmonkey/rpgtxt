@@ -110,7 +110,7 @@ export function loadTextNodes(){
         text:"Je vous trouve bien cruel, je ne cherche qu’à vous apporter mon aide. Si vous ne souhaiter pas répondre à une question aussi simple, je doute que vous souhaitiez répondre aux autres. Souhaitez-vous tout de même continuer ? ",
         options:[
             {
-                text:"e souhaite tout de même répondre aux autres questions",
+                text:"Je souhaite tout de même répondre aux autres questions",
                 nextText: 3
               },
             {

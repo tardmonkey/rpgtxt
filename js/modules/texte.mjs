@@ -24,6 +24,11 @@ export function loadTextNodes(){
                 }, {
                   text:'Je te vois',
                   require: personnage.getAgilité() >= 1,
+                  gainObj: {
+                    nom:"Pioche",
+                    description:"Pour trouver de l'or",
+                    nombreUtilisationMax:10,
+                    quantité:1},
                   nextText: 1.1                
                 },
           ]

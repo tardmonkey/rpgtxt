@@ -30,6 +30,11 @@ export function loadTextNodes(){
                     nombreUtilisationMax:10,
                     quantité:1},
                   nextText: 1.1                
+                }, {
+                  text:'Mettre son chapeau',
+                  require: personnage.presenceObjet("Chapeau"),
+                  useObj: "Chapeau",
+                  nextText: 1.1                
                 },
           ]
       },

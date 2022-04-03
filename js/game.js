@@ -43,6 +43,10 @@ function showTextNode(textNodeIndex) {
         button.onclick = () => gainObj(element.gainObj);
         button.innerHTML += " j'ai gainObj ";
       }
+      if (element.useObj) {
+        button.onclick = () => useObj(element.useObj);
+        button.innerHTML += " j'ai useObj ";
+      }
     } else {
       return false;
     }
@@ -75,6 +79,11 @@ function statUp(stat) {
 //Ajoute un objet au personnage
 function gainObj(obj) {
   personnage.ajoutObjet(obj.nom, obj.description, obj.nombreUtilisationMax, obj.quantité)
+}
+
+//Utilise un objet
+function useObj(obj) {
+  personnage.utiliserObjet(obj)
 }
 
 //Si un Personnage est présent dans le localstorage, on enlève le formulaire de création de noms

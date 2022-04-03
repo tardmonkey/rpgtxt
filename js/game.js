@@ -27,7 +27,7 @@ function showTextNode(textNodeIndex) {
 
   //affiche les options du texte
   textNode.options.forEach((element) => {
-    if (!element.require) {
+    if (element.require == null || element.require == true) {
       //si option n'a pas de require alors
       const button = document.createElement("button");
       button.innerHTML = element.text;
@@ -40,8 +40,6 @@ function showTextNode(textNodeIndex) {
         button.innerHTML += " j'ai statUp ";
       }
     } else {
-      //Ici il faut check quel est le prérequis (clé require) pour afficher l'option
-      //Puis l'afficher ou non
       return false;
     }
   });

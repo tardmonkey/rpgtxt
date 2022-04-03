@@ -21,6 +21,10 @@ export function loadTextNodes(){
                   text:'Intel ',
                   statUp:"int",
                   nextText: 1.1                
+                }, {
+                  text:'Je te vois',
+                  require: personnage.getAgilité() >= 1,
+                  nextText: 1.1                
                 },
           ]
       },

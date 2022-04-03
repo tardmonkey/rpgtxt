@@ -9,11 +9,14 @@ import { personnage } from "./modules/loadChar.mjs";
 function startGame() {
   loadCharacter();
   showHideCharCreate();
-  showTextNode(1);
+  showTextNode(personnage.getIdLastNode());
   fillInventory();
 }
 
 function showTextNode(textNodeIndex) {
+  //Mise à jour de l'id du dernier text node du joueur
+  personnage.setIdLastNode(textNodeIndex)
+
   //Mise à jour de l'inventaire et de la fiche de perso à chaque boucle
   fillFichePerso();
   fillInventory();
@@ -139,6 +142,7 @@ function loadCharacter() {
     personnage.setAgilité(charStored.agilité);
     personnage.setForce(charStored.force);
     personnage.setIntelligence(charStored.intelligence);
+    personnage.setIdLastNode(charStored.idLastNode)
     charStored.inventaire.forEach((element) => {
       personnage.ajoutObjet(
         element.nom,
@@ -191,7 +195,7 @@ let resetBtnYes = document.getElementById("resetBtn__yes");
 resetBtnYes.addEventListener("click", () => resetGame());
 
 function resetGame() {
-  localStorage.clear()
+  personnage.reset()
   hideReset()
   location.reload()
 }

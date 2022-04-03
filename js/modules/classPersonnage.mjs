@@ -8,9 +8,19 @@ export default class Personnage {
     this.force = force;
     this.intelligence = intel;
     this.inventaire=[];
+    this.idLastNode=1;
     // this.inventaire[0] = new Objet("Pain et fromages", "De quoi se nourrir pour un repas", 1, 1);
     // this.inventaire[1] = new Objet("Chapeau", "L'indispensable à cette époque", 1, 1);
   }
+
+  getIdLastNode() {
+    return this.idLastNode;
+}
+
+  setIdLastNode(nouvelleValeur){
+    this.idLastNode = nouvelleValeur;
+    localStorage.setItem("Personnage", JSON.stringify(this));
+}
 
   getNom() {
       return this.nom;
@@ -126,5 +136,15 @@ export default class Personnage {
   getInventaire(){
     return this.inventaire
     
+  }
+
+  reset(){
+    this.nom = "Temp";
+    this.prenom = "Temp";
+    this.agilité = 0;
+    this.force = 0;
+    this.intelligence = 0;
+    this.inventaire=[];
+    localStorage.clear()
   }
 }

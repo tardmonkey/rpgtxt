@@ -12,22 +12,23 @@
 <body>
     <main>
         <nav>
-<i class="fa-solid fa-boot"></i>
-            <span id="fichePersoBtn">Fiche de personnage<i class="fa-solid fa-user"></i></span>
-            <div class="personnage">
-                <ul id="fichePerso">
-                    <li id="ficheNom">Nom : </li>
-                    <li id="ficheForce">Force : </li>
-                    <li id="ficheIntel">Intelligence : </li>
-                    <li id="ficheAgi">Agilité : </li>
-                </ul>
-            </div>
-
-            <span id="inventaireBtn">Inventaire <i class="fa-solid fa-briefcase"></i></span>
-            <div class="inventaire">
-                <ul id="inventaire">
-                    
-                </ul>
+            <div id="perso__wrapper">
+                <span id="fichePersoBtn">Fiche de personnage<i class="fa-solid fa-user"></i></span>
+                <div class="personnage">
+                    <ul id="fichePerso">
+                        <li id="ficheNom">Nom : </li>
+                        <li id="ficheForce">Force : </li>
+                        <li id="ficheIntel">Intelligence : </li>
+                        <li id="ficheAgi">Agilité : </li>
+                    </ul>
+                </div>
+             </div>
+            <div id="inventaire__wrapper">
+                <span id="inventaireBtn">Inventaire <i class="fa-solid fa-briefcase"></i></span>
+                <div class="inventaire">
+                    <ul id="inventaire">
+                    </ul>
+                </div>
             </div>
             <aside id="resetBtn"><span>Reset <i class="fa-solid fa-gear"></i></span></aside>
             
@@ -49,10 +50,12 @@
             <button id="buttonChar" type="submit">Tel est mon nom</button>
         </form>
     </article>
-    <div id="reset__modale">
-        <span>Reset ?</span>
-        <span id="resetBtn__yes">Oui</span>
-        <span id="resetBtn__no">Non</span>
+    <div id="reset__modale__wrapper">
+        <div id="reset__modale">
+            <span>Supprimer votre sauvegarde ? Vous perdrez votre avancée. <br />Cette action est <strong>irréversible.</strong></span>
+            <span id="resetBtn__yes">Oui</span>
+            <span id="resetBtn__no">Non</span>
+        </div>
     </div>
 </body>
 </html>

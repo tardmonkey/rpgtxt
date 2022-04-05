@@ -174,15 +174,18 @@ let resetBtn = document.getElementById("resetBtn");
 resetBtn.addEventListener("click", () => showReset());
 
 function showReset() {
-  let divReset = document.getElementById("reset__modale");
+  let divReset = document.getElementById("reset__modale__wrapper");
   divReset.style.display = "flex";
 }
 
 let resetBtnNo = document.getElementById("resetBtn__no");
 resetBtnNo.addEventListener("click", () => hideReset());
 
+//click anywhere to close
+reset__modale__wrapper.addEventListener("click", () => hideReset())
+
 function hideReset() {
-  let divReset = document.getElementById("reset__modale");
+  let divReset = document.getElementById("reset__modale__wrapper");
   divReset.style.display = "none";
 }
 

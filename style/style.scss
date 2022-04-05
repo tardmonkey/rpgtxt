@@ -12,13 +12,8 @@
     src: url("./assets/fonts/JMH\ Typewriter-Thin.otf");
 }
 
-@keyframes intro {
-    0%{}
-    100%{
-        opacity:1;
-        background-color: rgb(94, 107, 119);
-    }
-}
+
+
 
 article{
     
@@ -39,6 +34,11 @@ article{
         font-size: clamp(0.8rem, 2rem, 2rem);
         width:50%;
         
+        animation-duration: 2000ms;
+        animation-name: intro__texte;
+        animation-fill-mode: forwards;
+        animation-delay: 1000ms;
+        transform: scale(0);
     }
 
     form{
@@ -55,19 +55,23 @@ article{
 
         input{
             height:4vh;
-            width:calc(30% + 35vw);
+            width:calc(30% + 15vw);
             border-radius: 15px;
             border:none;
             background-color: white;
             padding:0.3rem;
-            
+            animation-duration: 2000ms;
+            animation-name: intro__input;
+            animation-fill-mode: forwards;
+            animation-delay: 2000ms;
+            transform: translate3d(-500%,0,0);
             &:focus-visible{
                 outline: none;
                 background-image: url("./assets/img/arrow-right-solid.svg");
-            background-repeat: no-repeat;
-            background-position: 95%;
-            background-size: 16px 16px;
-            filter:brightness(95%)
+                background-repeat: no-repeat;
+                background-position: 95%;
+                background-size: 16px 16px;
+                filter:brightness(95%)
             
             }
             
@@ -222,28 +226,39 @@ main{
 
 
 
-
+#reset__modale__wrapper{
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,80%);
+    position:absolute;
+    top:0;
+    right:0;
+    display:none;
+}
 
 #reset__modale{
+    display:flex;
+    padding:1rem;
+    text-align: center;
     width: 50%;
     height:50%;
-    background-color: red;
+    background-color: rgb(187, 10, 10);
     position: absolute;
-    top:30%;
-    left:30%;
-    z-index:2;
-    display:none;
+    top:25%;
+    left:25%;
+    z-index:3;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color:white;
-    background-blend-mode: darken;
+    box-shadow: 5px 5px 9px -5px rgba(0,0,0,0.42);
     span{
-        font-size: 2rem;
-        opacity:0;
+        
+font-size: clamp(1rem, 2.5vw, 2rem); 
+
         &:first-child{
-            font-size: 3rem;
-            opacity:0;
+            font-size: clamp(1rem, 2.5vw, 2rem); 
+            padding-bottom: 2rem;
         }
         &:nth-child(2), &:nth-child(3){
             color:black;
@@ -252,6 +267,8 @@ main{
             margin:1rem;
             padding:1rem;
             text-align: center;
+            box-shadow: 5px 5px 9px -5px rgba(0,0,0,0.42);
+            transition: all ease 100ms;
             &:hover{
                 transform: scale(1.1);
             }

@@ -14,3 +14,22 @@
     animation-delay: #{$i} + 10ms;
     }
 }
+
+@keyframes intro {
+    0%{}
+    100%{
+        opacity:1;
+        background: linear-gradient(#3b3b3b, #979595);
+    }
+}
+
+@keyframes intro__texte {
+    0%{}
+    70%{}
+    100%{transform: scale(1);}
+}
+
+@keyframes intro__input {
+    0%{}
+    100%{transform: translate3d(0,0,0);}
+}

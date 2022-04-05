@@ -444,7 +444,7 @@ article {
   z-index: 10;
 }
 article p {
-  font-size: 2rem;
+  font-size: clamp(1rem, 2.5vw, 2rem);
   width: 50%;
   -webkit-animation-duration: 2000ms;
           animation-duration: 2000ms;
@@ -465,7 +465,7 @@ article form {
   width: 25%;
 }
 article form label {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 2rem);
 }
 article form input {
   height: 4vh;
@@ -604,12 +604,12 @@ main {
   justify-content: center;
   text-align: center;
   font-family: "JMH Typewriter";
-  font-size: clamp(1rem, 10vw, 1.5rem);
+  font-size: clamp(1rem, 2.5vw, 2rem);
   font-weight: bold;
 }
 .main button {
   font-family: "JMH Typewriter";
-  font-size: clamp(1rem, 10vw, 1rem);
+  font-size: clamp(0.5rem, 2vw, 1rem);
   font-weight: bold;
   opacity: 1;
   width: 20vw;

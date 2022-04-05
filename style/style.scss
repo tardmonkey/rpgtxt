@@ -31,7 +31,7 @@ article{
     animation-fill-mode: forwards;
     z-index: 10;
     p{
-        font-size: clamp(0.8rem, 2rem, 2rem);
+        font-size: clamp(1rem, 2.5vw, 2rem); 
         width:50%;
         
         animation-duration: 2000ms;
@@ -50,7 +50,7 @@ article{
         gap:1rem;
         width:25%;
         label{
-            font-size: clamp(0.8rem, 1.5rem, 2rem);
+            font-size: clamp(1rem, 2.5vw, 2rem); 
         }
 
         input{
@@ -193,11 +193,11 @@ main{
         justify-content: center;
         text-align: center;
         font-family: "JMH Typewriter";
-        font-size: clamp(1rem, 10vw, 1.5rem);
+        font-size: clamp(1rem, 2.5vw, 2rem); 
         font-weight: bold;
     button{
         font-family: "JMH Typewriter";
-        font-size: clamp(1rem, 10vw, 1rem);
+        font-size: clamp(0.5rem, 2vw, 1rem); 
         font-weight: bold;
         opacity:1;
         width: 20vw;

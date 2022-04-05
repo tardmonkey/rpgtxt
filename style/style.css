@@ -501,8 +501,6 @@ nav {
 }
 nav .personnage {
   display: none;
-  position: fixed;
-  margin: 1rem;
   border-radius: 5px;
   background-color: rgb(70, 70, 70);
   color: white;
@@ -510,15 +508,13 @@ nav .personnage {
   height: 12vh;
   justify-content: center;
   align-items: center;
-  transform: translate3d(0rem, 1.7rem, 0);
+  position: absolute;
 }
 nav .personnage span {
   font-weight: bold;
 }
 nav .inventaire {
   display: none;
-  position: fixed;
-  margin: 1rem;
   border-radius: 5px;
   background-color: rgb(70, 70, 70);
   color: white;
@@ -526,7 +522,7 @@ nav .inventaire {
   height: 12vh;
   justify-content: center;
   align-items: center;
-  transform: translate3d(14rem, 1.7rem, 0rem);
+  position: absolute;
 }
 nav #fichePersoBtn {
   -webkit-user-select: none;
@@ -544,6 +540,7 @@ nav #fichePersoBtn {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0;
 }
 nav #fichePersoBtn i {
   padding-left: 4px;
@@ -565,6 +562,7 @@ nav #inventaireBtn {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0;
 }
 nav #inventaireBtn i {
   padding-left: 8px;

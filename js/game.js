@@ -108,7 +108,7 @@ fichePersoBtn.addEventListener("click", () => showHideFiche());
 
 function showHideFiche() {
   let divFichePerso = document.querySelector(".personnage");
-  if (divFichePerso.style.display === "none") {
+  if (divFichePerso.style.display === "none" || divFichePerso.style.display === "") {
     divFichePerso.style.display = "flex";
   } else {
     divFichePerso.style.display = "none";
@@ -122,7 +122,7 @@ inventaireBtn.addEventListener("click", () => showHideInventaire());
 
 function showHideInventaire() {
   let divInventaire = document.querySelector(".inventaire");
-  if (divInventaire.style.display === "none") {
+  if (divInventaire.style.display === "none" || divInventaire.style.display === "") {
     divInventaire.style.display = "flex";
   } else {
     divInventaire.style.display = "none";

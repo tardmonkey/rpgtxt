@@ -87,13 +87,8 @@ article{
 nav {
     display:flex;
     
-    
-
     .personnage{
-        
         display:none;
-        position:fixed;
-        margin:1rem;
         border-radius:5px;
         background-color: rgb(70, 70, 70);
         color:white;
@@ -101,8 +96,7 @@ nav {
         height:12vh;
         justify-content: center;
         align-items: center;
-        transform: translate3d(0rem,1.7rem,0);
-    
+        position:absolute;
         span{
             font-weight: bold;
         }
@@ -111,8 +105,6 @@ nav {
 
     .inventaire{
         display:none;
-        position:fixed;
-        margin:1rem;
         border-radius:5px;
         background-color: rgb(70, 70, 70);
         color:white;
@@ -120,7 +112,7 @@ nav {
         height:12vh;
         justify-content: center;
         align-items: center;
-        transform: translate3d(14rem,1.7rem,0rem);   
+        position:absolute;
         
     }
 
@@ -137,6 +129,7 @@ nav {
         display:flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 0;
         i{
             padding-left:4px;
             width:1rem;
@@ -156,6 +149,7 @@ nav {
         display:flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 0;
         i{
             padding-left:8px;
             width:1rem;

@@ -1,0 +1,16 @@
+
+@keyframes slidein{
+    0%{
+        transform:translate3d(0rem,8rem,0rem);
+        opacity:0;
+    }
+    100%{
+        
+    }
+}
+
+@for $i from 0 through 5{
+    .main button:nth-child(#{$i}){
+    animation-delay: #{$i} + 10ms;
+    }
+}

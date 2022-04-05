@@ -12,8 +12,16 @@
     src: url("./assets/fonts/JMH\ Typewriter-Thin.otf");
 }
 
+@keyframes intro {
+    0%{}
+    100%{
+        opacity:1;
+        background-color: rgb(94, 107, 119);
+    }
+}
+
 article{
-    background-color: slategray;
+    
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -21,7 +29,12 @@ article{
     width: 100vw;
     height:100vh;
     font-family: "JMH Typewriter";
-
+    opacity:0;
+    background:white;
+    animation-duration: 3000ms;
+    animation-name: intro;
+    animation-fill-mode: forwards;
+    z-index: 10;
     p{
         font-size: clamp(0.8rem, 2rem, 2rem);
         width:50%;
@@ -227,8 +240,10 @@ main{
     background-blend-mode: darken;
     span{
         font-size: 2rem;
+        opacity:0;
         &:first-child{
             font-size: 3rem;
+            opacity:0;
         }
         &:nth-child(2), &:nth-child(3){
             color:black;

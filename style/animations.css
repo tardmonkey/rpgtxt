@@ -1,0 +1,41 @@
+@-webkit-keyframes slidein {
+  0% {
+    transform: translate3d(0rem, 8rem, 0rem);
+    opacity: 0;
+  }
+}
+@keyframes slidein {
+  0% {
+    transform: translate3d(0rem, 8rem, 0rem);
+    opacity: 0;
+  }
+}
+.main button:nth-child(0) {
+  -webkit-animation-delay: 010ms;
+          animation-delay: 010ms;
+}
+
+.main button:nth-child(1) {
+  -webkit-animation-delay: 110ms;
+          animation-delay: 110ms;
+}
+
+.main button:nth-child(2) {
+  -webkit-animation-delay: 210ms;
+          animation-delay: 210ms;
+}
+
+.main button:nth-child(3) {
+  -webkit-animation-delay: 310ms;
+          animation-delay: 310ms;
+}
+
+.main button:nth-child(4) {
+  -webkit-animation-delay: 410ms;
+          animation-delay: 410ms;
+}
+
+.main button:nth-child(5) {
+  -webkit-animation-delay: 510ms;
+          animation-delay: 510ms;
+}/*# sourceMappingURL=animations.css.map */

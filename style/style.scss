@@ -283,7 +283,7 @@ font-size: clamp(1rem, 2.5vw, 2rem);
         &:first-child{
             font-size: clamp(1rem, 2.5vw, 2rem); 
             padding-bottom: 2rem;
-            
+            color:$couleur-texte2;
         }
         &:nth-child(2), &:nth-child(3){
             color:$couleur-texte1;

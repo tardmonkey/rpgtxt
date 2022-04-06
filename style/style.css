@@ -693,6 +693,7 @@ main {
 #reset__modale span:first-child {
   font-size: clamp(1rem, 2.5vw, 2rem);
   padding-bottom: 2rem;
+  color: white;
 }
 #reset__modale span:nth-child(2), #reset__modale span:nth-child(3) {
   color: rgb(70, 70, 70);

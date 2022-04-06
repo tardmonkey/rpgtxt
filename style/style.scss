@@ -89,6 +89,7 @@ nav {
     width:100%;
     justify-content: center;
     gap:1rem;
+    height:5vh;
     .personnage{
         display:none;
         border-radius:5px;
@@ -202,7 +203,7 @@ main{
         justify-content: center;
         text-align: center;
         font-family: "JMH Typewriter";
-        font-size: clamp(1rem, 2.5vw, 2rem); 
+        font-size: clamp(1rem, 2.5vw, 1.5rem); 
         font-weight: bold;
     button{
         font-family: "JMH Typewriter";

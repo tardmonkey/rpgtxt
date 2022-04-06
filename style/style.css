@@ -425,6 +425,10 @@ template {
   src: url("./assets/fonts/JMH Typewriter-Bold.otf");
   src: url("./assets/fonts/JMH Typewriter-Thin.otf");
 }
+body {
+  background-color: rgb(70, 70, 70);
+}
+
 article {
   display: flex;
   flex-direction: column;
@@ -537,8 +541,8 @@ nav #fichePersoBtn {
   z-index: 1;
   margin: 1rem;
   border-radius: 5px;
-  background-color: rgb(70, 70, 70);
-  color: white;
+  background-color: white;
+  color: black;
   width: 100%;
   height: 100%;
   display: flex;
@@ -559,8 +563,8 @@ nav #inventaireBtn {
   cursor: pointer;
   margin: 1rem;
   border-radius: 5px;
-  background-color: rgb(70, 70, 70);
-  color: white;
+  background-color: white;
+  color: black;
   width: 100%;
   height: 100%;
   display: flex;
@@ -581,8 +585,8 @@ nav #resetBtn {
   cursor: pointer;
   margin: 1rem;
   border-radius: 5px;
-  background-color: rgb(70, 70, 70);
-  color: white;
+  background-color: white;
+  color: black;
   width: 5%;
   height: 100%;
   display: flex;
@@ -602,6 +606,8 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: url("./assets/img/forest-g4c0e05082_1920.jpg");
+  height: 100vh;
 }
 
 .main {
@@ -665,7 +671,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: black;
   box-shadow: 5px 5px 9px -5px rgba(0, 0, 0, 0.42);
 }
 #reset__modale span {

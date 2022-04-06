@@ -1,5 +1,7 @@
 @use "normalize.css";
 @use "./animations.scss";
+@import "./var.scss";
+
 *, *::after, *::before{
     box-sizing: border-box;
 }
@@ -13,7 +15,9 @@
 }
 
 
-
+body{
+    background-color: $background-color;
+}
 
 article{
     
@@ -125,8 +129,8 @@ nav {
         z-index:1;
         margin:1rem;
         border-radius:5px;
-        background-color: rgb(70, 70, 70);
-        color:white;
+        background-color: $couleur-bouton__nav;
+        color:$couleur-texte1;
         width:100%;
         height:100%;
         display:flex;
@@ -145,8 +149,8 @@ nav {
         cursor:pointer;
         margin:1rem;
         border-radius:5px;
-        background-color: rgb(70, 70, 70);
-        color:white;
+        background-color: $couleur-bouton__nav;
+        color:$couleur-texte1;
         width:100%;
         height:100%;
         display:flex;
@@ -164,8 +168,8 @@ nav {
         cursor:pointer;
         margin:1rem;
         border-radius:5px;
-        background-color: rgb(70, 70, 70);
-        color:white;
+        background-color: $couleur-bouton__nav;
+        color:$couleur-texte1;
         width:5%;
         height:100%;
         display:flex;
@@ -190,7 +194,8 @@ main{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-    
+  background-image: url("./assets/img/forest-g4c0e05082_1920.jpg");
+  height: 100vh;
 }
 .main{
         width: 50vw;
@@ -252,7 +257,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color:white;
+    color:$couleur-texte1;
     box-shadow: 5px 5px 9px -5px rgba(0,0,0,0.42);
     span{
         
@@ -264,8 +269,8 @@ font-size: clamp(1rem, 2.5vw, 2rem);
             
         }
         &:nth-child(2), &:nth-child(3){
-            color:black;
-            background-color: white;
+            color:$couleur-texte1;
+            background-color: $couleur-bouton__reset;
             width: 33%;
             margin:1rem;
             padding:1rem;

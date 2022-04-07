@@ -500,6 +500,17 @@ article form button {
   display: none;
 }
 
+@-webkit-keyframes nav__appear {
+  100% {
+    height: 18vh;
+  }
+}
+
+@keyframes nav__appear {
+  100% {
+    height: 18vh;
+  }
+}
 nav {
   display: flex;
   width: 100%;
@@ -507,37 +518,61 @@ nav {
   gap: 1rem;
   height: 5vh;
 }
-nav .personnage {
-  display: none;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+nav #perso__wrapper {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   color: rgb(70, 70, 70);
-  width: 179px;
-  position: absolute;
-  margin-left: 1rem;
+  overflow: hidden;
+  height: 5vh;
 }
-nav .personnage span {
+nav #perso__wrapper span {
   font-weight: bold;
+  height: 5vh;
 }
-nav .personnage ul {
+nav #perso__wrapper ul {
   list-style: none;
 }
-nav .inventaire {
-  display: none;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+nav #perso__wrapper:hover {
+  -webkit-animation-name: nav__appear;
+          animation-name: nav__appear;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+nav #perso__wrapper:hover #fichePersoBtn {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+nav #inventaire__wrapper {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   color: rgb(70, 70, 70);
-  width: 209px;
-  position: absolute;
-  margin-left: 1rem;
+  overflow: hidden;
+  height: 5vh;
+  border-radius: 5px;
 }
-nav .inventaire span {
+nav #inventaire__wrapper span {
+  height: 5vh;
   font-weight: bold;
 }
-nav .inventaire ul {
+nav #inventaire__wrapper ul {
   list-style: none;
+}
+nav #inventaire__wrapper:hover {
+  -webkit-animation-name: nav__appear;
+          animation-name: nav__appear;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+nav #inventaire__wrapper:hover #fichePersoBtn {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 nav #fichePersoBtn {
   -webkit-user-select: none;
@@ -550,7 +585,7 @@ nav #fichePersoBtn {
   border-radius: 5px;
   background-color: white;
   color: rgb(70, 70, 70);
-  width: 100%;
+  width: 15vw;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -572,7 +607,7 @@ nav #inventaireBtn {
   border-radius: 5px;
   background-color: white;
   color: rgb(70, 70, 70);
-  width: 100%;
+  width: 15vw;
   height: 100%;
   padding-left: 3rem;
   padding-right: 3rem;

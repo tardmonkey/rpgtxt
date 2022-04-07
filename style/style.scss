@@ -88,51 +88,77 @@ article{
     }
 }
 
+@keyframes nav__appear {
+    0%{}
+    100%{
+        height:18vh;
+    }
+}
 nav {
     display:flex;
     width:100%;
     justify-content: center;
     gap:1rem;
     height:5vh;
-
-    .personnage{
-        display:none;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+    #perso__wrapper{
+        border-radius: 5px;
+        display:flex;
+        flex-direction: column;
         background-color: $couleur-bouton__nav;
         color:$couleur-texte1;
-        width:179px;
-        position:absolute;
-        margin-left:1rem;
+        overflow: hidden;
+        height:5vh;
         span{
             font-weight: bold;
+            height:5vh;
         }
         ul{
             list-style: none;
         }
+                &:hover{
+            animation-name: nav__appear;
+            animation-duration: 300ms;
+            animation-fill-mode: forwards;
+            
+            #fichePersoBtn{
+                
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+        }
+       
     }
+    
 
-
-    .inventaire{
-        display:none;
-
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+    #inventaire__wrapper{
+        display:flex;
+        flex-direction: column;
         background-color: $couleur-bouton__nav;
         color:$couleur-texte1;
-        width:209px;
-        position:absolute;
-        margin-left:1rem;
-       
-       
+        overflow: hidden;
+        height: 5vh;
+        border-radius: 5px;
         span{
+            height:5vh;
             font-weight: bold;
         }
         ul{
             list-style: none;
         }
         
+        &:hover{
+            animation-name: nav__appear;
+            animation-duration: 300ms;
+            animation-fill-mode: forwards;
+            
+            #fichePersoBtn{
+                
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+        }
     }
+   
 
     #fichePersoBtn{
         user-select: none;
@@ -143,7 +169,7 @@ nav {
         
         background-color: $couleur-bouton__nav;
         color:$couleur-texte1;
-        width:100%;
+        width:15vw;
         height:100%;
         display:flex;
         justify-content: center;
@@ -161,10 +187,9 @@ nav {
         cursor:pointer;
         padding:1rem;
         border-radius:5px;
-        
         background-color: $couleur-bouton__nav;
         color:$couleur-texte1;
-        width:100%;
+        width:15vw;
         height:100%;
         padding-left: 3rem;
         padding-right: 3rem;

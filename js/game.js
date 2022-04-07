@@ -122,6 +122,7 @@ inventaireBtn.addEventListener("click", () => showHideInventaire());
 
 function showHideInventaire() {
   let divInventaire = document.querySelector(".inventaire");
+  
   if (divInventaire.style.display === "none" || divInventaire.style.display === "") {
     divInventaire.style.display = "flex";
   } else {

@@ -546,10 +546,8 @@ nav #fichePersoBtn {
           user-select: none;
   cursor: pointer;
   z-index: 1;
-  margin: 1rem;
+  padding: 1rem;
   border-radius: 5px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
   background-color: white;
   color: rgb(70, 70, 70);
   width: 100%;
@@ -570,10 +568,8 @@ nav #inventaireBtn {
       -ms-user-select: none;
           user-select: none;
   cursor: pointer;
-  margin: 1rem;
+  padding: 1rem;
   border-radius: 5px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
   background-color: white;
   color: rgb(70, 70, 70);
   width: 100%;
@@ -596,7 +592,7 @@ nav #resetBtn {
       -ms-user-select: none;
           user-select: none;
   cursor: pointer;
-  margin: 1rem;
+  padding: 1rem;
   border-radius: 5px;
   background-color: white;
   color: rgb(70, 70, 70);
@@ -627,6 +623,7 @@ main {
   width: 50vw;
   height: 90vh;
   line-height: 140%;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;

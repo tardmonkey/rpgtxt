@@ -138,10 +138,9 @@ nav {
         user-select: none;
         cursor:pointer;
         z-index:1;
-        margin:1rem;
+        padding:1rem;
         border-radius:5px;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
+        
         background-color: $couleur-bouton__nav;
         color:$couleur-texte1;
         width:100%;
@@ -160,10 +159,9 @@ nav {
     #inventaireBtn{
         user-select: none;
         cursor:pointer;
-        margin:1rem;
+        padding:1rem;
         border-radius:5px;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
+        
         background-color: $couleur-bouton__nav;
         color:$couleur-texte1;
         width:100%;
@@ -183,7 +181,7 @@ nav {
    #resetBtn{
         user-select: none;
         cursor:pointer;
-        margin:1rem;
+        padding:1rem;
         border-radius:5px;
         background-color: $couleur-bouton__nav;
         color:$couleur-texte1;
@@ -218,7 +216,7 @@ main{
         width: 50vw;
         height: 90vh;
         line-height: 140%;
-
+        color:$color__main--text;
         display:flex;
         flex-direction: column;
         align-items: center;

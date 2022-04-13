@@ -199,4 +199,8 @@ function resetGame() {
   location.reload()
 }
 
+//DISCLAIMER
+let disclaimer = document.getElementById("disclaimer")
+disclaimer.addEventListener("click", () => disclaimer.style.display="none")
+
 startGame();

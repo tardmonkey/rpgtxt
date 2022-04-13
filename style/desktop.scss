@@ -316,6 +316,31 @@ font-size: clamp(1rem, 2.5vw, 2rem);
 }
 
 
+#disclaimer{
+    position: absolute;
+    top:0;
+    right:0;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+    background-color: rgb(27, 27, 27);
+    color:rgb(221, 216, 216);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    i{
+        font-size: 5rem;
+    }
+    p{
+        font-size: clamp(1rem, 2.5vw, 2rem); 
+        text-align: center;
+    }
+    span{
+        font-size: clamp(0.9rem, 2vw, 1.5rem); 
+    }
+}
+
 @media screen and (max-width:600px) {
     nav{
         position:fixed;

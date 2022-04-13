@@ -338,48 +338,13 @@ template {
   display: none;
 }
 
-@media screen and (max-width: 600px) {
-  nav {
-    position: fixed;
-    top: 0;
-    background-color: white;
-    gap: 0;
-  }
-  nav div {
-    width: 100%;
-  }
-  nav #fichePersoBtn {
-    width: 100%;
-  }
-  nav #inventaireBtn {
-    width: 100%;
-  }
-  nav #resetBtn {
-    width: 40vw;
-  }
-
-  .main {
-    width: 90vw;
-    transform: translate3d(0, -1rem, 0);
-  }
-  .main button {
-    width: 90vw;
-  }
-
-  article p {
-    width: 80vw;
-  }
-
-  #name {
-    width: 80vw;
-  }
-}
 @-webkit-keyframes slidein {
   0% {
     transform: translate3d(0rem, 8rem, 0rem);
     opacity: 0;
   }
 }
+
 @keyframes slidein {
   0% {
     transform: translate3d(0rem, 8rem, 0rem);
@@ -760,6 +725,31 @@ main {
 }
 #reset__modale span:nth-child(2):hover, #reset__modale span:nth-child(3):hover {
   transform: scale(1.1);
+}
+
+#disclaimer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  background-color: rgb(27, 27, 27);
+  color: rgb(221, 216, 216);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#disclaimer i {
+  font-size: 5rem;
+}
+#disclaimer p {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  text-align: center;
+}
+#disclaimer span {
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
 }
 
 @media screen and (max-width: 600px) {

@@ -205,7 +205,8 @@ disclaimer.addEventListener("click", () => disclaimerHide())
 
 
 function disclaimerHide(){
-
+  var audio = new Audio("../material/sound/retro-game-notification.wav");
+  audio.play();
   disclaimer.style.display="none"
   document.querySelector("article").classList.add("animation--article__intro")
   document.querySelector("article input").classList.add("animation--input__intro")

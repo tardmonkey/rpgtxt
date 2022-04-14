@@ -201,6 +201,15 @@ function resetGame() {
 
 //DISCLAIMER
 let disclaimer = document.getElementById("disclaimer")
-disclaimer.addEventListener("click", () => disclaimer.style.display="none")
+disclaimer.addEventListener("click", () => disclaimerHide())
+
+
+function disclaimerHide(){
+
+  disclaimer.style.display="none"
+  document.querySelector("article").classList.add("animation--article__intro")
+  document.querySelector("article input").classList.add("animation--input__intro")
+
+}
 
 startGame();

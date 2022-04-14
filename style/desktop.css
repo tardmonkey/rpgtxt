@@ -429,6 +429,26 @@ body {
   background-color: rgb(70, 70, 70);
 }
 
+.animation--article__intro {
+  -webkit-animation-duration: 3000ms;
+          animation-duration: 3000ms;
+  -webkit-animation-name: intro;
+          animation-name: intro;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.animation--input__intro {
+  -webkit-animation-duration: 2000ms;
+          animation-duration: 2000ms;
+  -webkit-animation-name: intro__input;
+          animation-name: intro__input;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+
 article {
   display: flex;
   flex-direction: column;
@@ -439,12 +459,6 @@ article {
   font-family: "JMH Typewriter";
   opacity: 0;
   background: white;
-  -webkit-animation-duration: 3000ms;
-          animation-duration: 3000ms;
-  -webkit-animation-name: intro;
-          animation-name: intro;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
   z-index: 10;
 }
 article p {
@@ -479,14 +493,6 @@ article form input {
   border: none;
   background-color: white;
   padding: 0.3rem;
-  -webkit-animation-duration: 2000ms;
-          animation-duration: 2000ms;
-  -webkit-animation-name: intro__input;
-          animation-name: intro__input;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 2000ms;
-          animation-delay: 2000ms;
   transform: translate3d(-500%, 0, 0);
 }
 article form input:focus-visible {
